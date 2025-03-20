@@ -1,13 +1,14 @@
 module github.com/netdata/go.d.plugin
 
 go 1.21
+toolchain go1.24.1
 
 replace github.com/prometheus/prometheus => github.com/prometheus/prometheus v0.36.2
 
 require (
 	github.com/DATA-DOG/go-sqlmock v1.5.2
 	github.com/Masterminds/sprig/v3 v3.2.3
-	github.com/Wing924/ltsv v0.3.1
+	github.com/Wing924/ltsv v0.4.0
 	github.com/apparentlymart/go-cidr v1.1.0
 	github.com/araddon/dateparse v0.0.0-20210429162001-6b43995a97de
 	github.com/axiomhq/hyperloglog v0.0.0-20230201085229-3ddf4bad03dc
@@ -38,7 +39,7 @@ require (
 	github.com/muesli/cancelreader v0.2.2
 	github.com/prometheus-community/pro-bing v0.3.0
 	github.com/prometheus/prometheus v2.5.0+incompatible
-	github.com/stretchr/testify v1.8.4
+	github.com/stretchr/testify v1.9.0
 	github.com/tomasen/fcgi_client v0.0.0-20180423082037-2bb3d819fd19
 	github.com/valyala/fastjson v1.6.4
 	github.com/vmware/govmomi v0.35.0
@@ -127,7 +128,6 @@ require (
 	golang.org/x/term v0.17.0 // indirect
 	golang.org/x/time v0.3.0 // indirect
 	golang.org/x/tools v0.17.0 // indirect
-	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
 	golang.zx2c4.com/wireguard v0.0.0-20230325221338-052af4a8072b // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/protobuf v1.31.0 // indirect

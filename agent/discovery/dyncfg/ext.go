@@ -69,7 +69,17 @@ func (d *Discovery) getConfigBytes(key string) ([]byte, error) {
 	return bs, nil
 }
 
-var envNDStockConfigDir = os.Getenv("KHULNASOFT_STOCK_CONFIG_DIR")
+func getStockConfigDir() string {
+	return os.Getenv("KHULNASOFT_STOCK_CONFIG_DIR")
+}
+
+func isStock(cfg confgroup.Config) bool {
+	stockConfigDir := getStockConfigDir()
+	if stockConfigDir == "" {
+		return false
+	}
+	// rest of the function
+}
 
 func isStock(cfg confgroup.Config) bool {
 	if envNDStockConfigDir == "" {

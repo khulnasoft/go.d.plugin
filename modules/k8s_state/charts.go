@@ -10,7 +10,8 @@ import (
 	"github.com/khulnasoft/go.d.plugin/agent/module"
 )
 
-// KHULNASOFT_CHART_PRIO_CGROUPS_CONTAINERS 40000
+// Priority constants
+const KHULNASOFT_CHART_PRIO_CGROUPS_CONTAINERS = 40000
 const prioDiscoveryDiscovererState = 50999
 
 const (

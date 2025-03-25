@@ -5,7 +5,7 @@ package portcheck
 import (
 	"errors"
 
-	"github.com/netdata/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
 )
 
 func (pc *PortCheck) validateConfig() error {

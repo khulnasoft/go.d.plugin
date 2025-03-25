@@ -7,9 +7,9 @@ import (
 	_ "embed"
 	"time"
 
-	"github.com/netdata/go.d.plugin/agent/module"
-	"github.com/netdata/go.d.plugin/pkg/tlscfg"
-	"github.com/netdata/go.d.plugin/pkg/web"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/pkg/tlscfg"
+	"github.com/khulnasoft/go.d.plugin/pkg/web"
 
 	"github.com/blang/semver/v4"
 	"github.com/go-redis/redis/v8"

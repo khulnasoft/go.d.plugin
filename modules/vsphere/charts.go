@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/netdata/go.d.plugin/agent/module"
-	rs "github.com/netdata/go.d.plugin/modules/vsphere/resources"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
+	rs "github.com/khulnasoft/go.d.plugin/modules/vsphere/resources"
 )
 
 const (

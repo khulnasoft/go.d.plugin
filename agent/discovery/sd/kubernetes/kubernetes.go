@@ -11,9 +11,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/netdata/go.d.plugin/agent/discovery/sd/model"
-	"github.com/netdata/go.d.plugin/logger"
-	"github.com/netdata/go.d.plugin/pkg/k8sclient"
+	"github.com/khulnasoft/go.d.plugin/agent/discovery/sd/model"
+	"github.com/khulnasoft/go.d.plugin/logger"
+	"github.com/khulnasoft/go.d.plugin/pkg/k8sclient"
 
 	"github.com/ilyam8/hashstructure"
 	corev1 "k8s.io/api/core/v1"
@@ -38,7 +38,7 @@ func NewKubeDiscoverer(cfg Config) (*KubeDiscoverer, error) {
 		return nil, fmt.Errorf("config validation: %v", err)
 	}
 
-	client, err := k8sclient.New("Netdata/service-td")
+	client, err := k8sclient.New("Khulnasoft/service-td")
 	if err != nil {
 		return nil, fmt.Errorf("create clientset: %v", err)
 	}
@@ -86,6 +86,7 @@ func (d *KubeDiscoverer) Discover(ctx context.Context, in chan<- []model.TargetG
 	for _, namespace := range d.namespaces {
 		if err := d.setupPodDiscoverer(ctx, d.podConf, namespace); err != nil {
 			d.Errorf("create pod discoverer: %v", err)
+			in <- nil // Signal error to caller
 			return
 		}
 		if err := d.setupServiceDiscoverer(ctx, d.svcConf, namespace); err != nil {

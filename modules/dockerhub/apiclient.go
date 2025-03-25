@@ -10,7 +10,7 @@ import (
 	"net/url"
 	"path"
 
-	"github.com/netdata/go.d.plugin/pkg/web"
+	"github.com/khulnasoft/go.d.plugin/pkg/web"
 )
 
 type repository struct {

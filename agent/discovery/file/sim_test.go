@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/netdata/go.d.plugin/agent/confgroup"
+	"github.com/khulnasoft/go.d.plugin/agent/confgroup"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -79,7 +79,7 @@ type tmpDir struct {
 }
 
 func newTmpDir(t *testing.T, pattern string) *tmpDir {
-	pattern = "netdata-go-test-discovery-file-" + pattern
+	pattern = "khulnasoft-go-test-discovery-file-" + pattern
 	dir, err := os.MkdirTemp(os.TempDir(), pattern)
 	require.NoError(t, err)
 	return &tmpDir{dir: dir, t: t}

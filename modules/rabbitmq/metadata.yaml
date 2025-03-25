@@ -75,7 +75,7 @@ modules:
               default_value: http://localhost:15672
               required: true
             - name: collect_queues_metrics
-              description: Collect stats per vhost per queues. Enabling this can introduce serious overhead on both Netdata and RabbitMQ if many queues are configured and used.
+              description: Collect stats per vhost per queues. Enabling this can introduce serious overhead on both Khulnasoft and RabbitMQ if many queues are configured and used.
               default_value: false
               required: false
             - name: timeout

@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/redis/README.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/redis/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/redis/README.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/redis/metadata.yaml"
 sidebar_label: "Redis"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/Databases"
@@ -11,13 +11,13 @@ endmeta-->
 # Redis
 
 
-<img src="https://netdata.cloud/img/redis.svg" width="150"/>
+<img src="https://khulnasoft.com/img/redis.svg" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: redis
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
@@ -109,10 +109,10 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ redis_connections_rejected ](https://github.com/netdata/netdata/blob/master/src/health/health.d/redis.conf) | redis.connections | connections rejected because of maxclients limit in the last minute |
-| [ redis_bgsave_slow ](https://github.com/netdata/netdata/blob/master/src/health/health.d/redis.conf) | redis.bgsave_now | duration of the on-going RDB save operation |
-| [ redis_bgsave_broken ](https://github.com/netdata/netdata/blob/master/src/health/health.d/redis.conf) | redis.bgsave_health | status of the last RDB save operation (0: ok, 1: error) |
-| [ redis_master_link_down ](https://github.com/netdata/netdata/blob/master/src/health/health.d/redis.conf) | redis.master_link_down_since_time | time elapsed since the link between master and slave is down |
+| [ redis_connections_rejected ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/redis.conf) | redis.connections | connections rejected because of maxclients limit in the last minute |
+| [ redis_bgsave_slow ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/redis.conf) | redis.bgsave_now | duration of the on-going RDB save operation |
+| [ redis_bgsave_broken ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/redis.conf) | redis.bgsave_health | status of the last RDB save operation (0: ok, 1: error) |
+| [ redis_master_link_down ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/redis.conf) | redis.master_link_down_since_time | time elapsed since the link between master and slave is down |
 
 
 ## Setup
@@ -129,10 +129,10 @@ The configuration file name for this integration is `go.d/redis.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/redis.conf
 ```
 #### Options
@@ -230,17 +230,17 @@ jobs:
 To troubleshoot issues with the `redis` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

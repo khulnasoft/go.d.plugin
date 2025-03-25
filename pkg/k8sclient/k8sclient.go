@@ -17,7 +17,7 @@ import (
 
 const (
 	EnvFakeClient    = "KUBERNETES_FAKE_CLIENTSET"
-	defaultUserAgent = "Netdata/k8s-client"
+	defaultUserAgent = "Khulnasoft/k8s-client"
 )
 
 func New(userAgent string) (kubernetes.Interface, error) {

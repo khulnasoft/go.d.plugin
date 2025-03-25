@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/httpcheck/README.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/httpcheck/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/httpcheck/README.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/httpcheck/metadata.yaml"
 sidebar_label: "HTTP Endpoints"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/Synthetic Checks"
@@ -11,13 +11,13 @@ endmeta-->
 # HTTP Endpoints
 
 
-<img src="https://netdata.cloud/img/globe.svg" width="150"/>
+<img src="https://khulnasoft.com/img/globe.svg" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: httpcheck
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
@@ -94,10 +94,10 @@ The configuration file name for this integration is `go.d/httpcheck.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/httpcheck.conf
 ```
 #### Options
@@ -117,7 +117,7 @@ The following options can be defined globally: update_every, autodetection_retry
 | headers_match | This option defines a set of rules that check for specific key-value pairs in the HTTP headers of the response. | [] | no |
 | headers_match.exclude | This option determines whether the rule should check for the presence of the specified key-value pair or the absence of it. | no | no |
 | headers_match.key | The exact name of the HTTP header to check for. |  | yes |
-| headers_match.value | The [pattern](https://github.com/netdata/go.d.plugin/tree/master/pkg/matcher#supported-format) to match against the value of the specified header. |  | no |
+| headers_match.value | The [pattern](https://github.com/khulnasoft/go.d.plugin/tree/master/pkg/matcher#supported-format) to match against the value of the specified header. |  | no |
 | cookie_file | Path to cookie file. See [cookie file format](https://everything.curl.dev/http/cookies/fileformat). |  | no |
 | timeout | HTTP request timeout. | 1 | no |
 | username | Username for basic HTTP authentication. |  | no |
@@ -164,7 +164,7 @@ jobs:
     url: http://127.0.0.1:8080
     headers:
       Host: localhost:8080
-      User-Agent: netdata/go.d.plugin
+      User-Agent: khulnasoft/go.d.plugin
       Accept: */*
 
 ```
@@ -189,7 +189,7 @@ jobs:
 
 ##### With `header_match`
 
-Example configurations with `header_match`. See the value [pattern](https://github.com/netdata/go.d.plugin/tree/master/pkg/matcher#supported-format) syntax.
+Example configurations with `header_match`. See the value [pattern](https://github.com/khulnasoft/go.d.plugin/tree/master/pkg/matcher#supported-format) syntax.
 
 <details><summary>Config</summary>
 
@@ -295,17 +295,17 @@ jobs:
 To troubleshoot issues with the `httpcheck` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

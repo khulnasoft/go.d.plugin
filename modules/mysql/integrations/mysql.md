@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/mysql/integrations/mysql.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/mysql/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/mysql/integrations/mysql.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/mysql/metadata.yaml"
 sidebar_label: "MySQL"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/Databases"
@@ -11,13 +11,13 @@ endmeta-->
 # MySQL
 
 
-<img src="https://netdata.cloud/img/mysql.svg" width="150"/>
+<img src="https://khulnasoft.com/img/mysql.svg" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: mysql
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
@@ -45,7 +45,7 @@ This collector supports collecting metrics from multiple instances of this integ
 
 #### Auto-Detection
 
-By default, it detects instances running on localhost by trying to connect as root and netdata using known MySQL TCP and UNIX sockets:
+By default, it detects instances running on localhost by trying to connect as root and khulnasoft using known MySQL TCP and UNIX sockets:
 
 - /var/run/mysqld/mysqld.sock
 - /var/run/mysqld/mysql.sock
@@ -190,25 +190,25 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ mysql_10s_slow_queries ](https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf) | mysql.queries | number of slow queries in the last 10 seconds |
-| [ mysql_10s_table_locks_immediate ](https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf) | mysql.table_locks | number of table immediate locks in the last 10 seconds |
-| [ mysql_10s_table_locks_waited ](https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf) | mysql.table_locks | number of table waited locks in the last 10 seconds |
-| [ mysql_10s_waited_locks_ratio ](https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf) | mysql.table_locks | ratio of waited table locks over the last 10 seconds |
-| [ mysql_connections ](https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf) | mysql.connections_active | client connections utilization |
-| [ mysql_replication ](https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf) | mysql.slave_status | replication status (0: stopped, 1: working) |
-| [ mysql_replication_lag ](https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf) | mysql.slave_behind | difference between the timestamp of the latest transaction processed by the SQL thread and the timestamp of the same transaction when it was processed on the master |
-| [ mysql_galera_cluster_size_max_2m ](https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf) | mysql.galera_cluster_size | maximum galera cluster size in the last 2 minutes starting one minute ago |
-| [ mysql_galera_cluster_size ](https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf) | mysql.galera_cluster_size | current galera cluster size, compared to the maximum size in the last 2 minutes |
-| [ mysql_galera_cluster_state_warn ](https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf) | mysql.galera_cluster_state | galera node state is either Donor/Desynced or Joined |
-| [ mysql_galera_cluster_state_crit ](https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf) | mysql.galera_cluster_state | galera node state is either Undefined or Joining or Error |
-| [ mysql_galera_cluster_status ](https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf) | mysql.galera_cluster_status | galera node is part of a nonoperational component. This occurs in cases of multiple membership changes that result in a loss of Quorum or in cases of split-brain situations. |
+| [ mysql_10s_slow_queries ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf) | mysql.queries | number of slow queries in the last 10 seconds |
+| [ mysql_10s_table_locks_immediate ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf) | mysql.table_locks | number of table immediate locks in the last 10 seconds |
+| [ mysql_10s_table_locks_waited ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf) | mysql.table_locks | number of table waited locks in the last 10 seconds |
+| [ mysql_10s_waited_locks_ratio ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf) | mysql.table_locks | ratio of waited table locks over the last 10 seconds |
+| [ mysql_connections ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf) | mysql.connections_active | client connections utilization |
+| [ mysql_replication ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf) | mysql.slave_status | replication status (0: stopped, 1: working) |
+| [ mysql_replication_lag ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf) | mysql.slave_behind | difference between the timestamp of the latest transaction processed by the SQL thread and the timestamp of the same transaction when it was processed on the master |
+| [ mysql_galera_cluster_size_max_2m ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf) | mysql.galera_cluster_size | maximum galera cluster size in the last 2 minutes starting one minute ago |
+| [ mysql_galera_cluster_size ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf) | mysql.galera_cluster_size | current galera cluster size, compared to the maximum size in the last 2 minutes |
+| [ mysql_galera_cluster_state_warn ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf) | mysql.galera_cluster_state | galera node state is either Donor/Desynced or Joined |
+| [ mysql_galera_cluster_state_crit ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf) | mysql.galera_cluster_state | galera node state is either Undefined or Joining or Error |
+| [ mysql_galera_cluster_status ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf) | mysql.galera_cluster_status | galera node is part of a nonoperational component. This occurs in cases of multiple membership changes that result in a loss of Quorum or in cases of split-brain situations. |
 
 
 ## Setup
 
 ### Prerequisites
 
-#### Create netdata user
+#### Create khulnasoft user
 
 A user account should have the
 following [permissions](https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html):
@@ -217,15 +217,15 @@ following [permissions](https://dev.mysql.com/doc/refman/8.0/en/privileges-provi
 - [`REPLICATION CLIENT`](https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html#priv_replication-client)
 - [`PROCESS`](https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html#priv_process)
 
-To create the `netdata` user with these permissions, execute the following in the MySQL shell:
+To create the `khulnasoft` user with these permissions, execute the following in the MySQL shell:
 
 ```mysql
-CREATE USER 'netdata'@'localhost';
-GRANT USAGE, REPLICATION CLIENT, PROCESS ON *.* TO 'netdata'@'localhost';
+CREATE USER 'khulnasoft'@'localhost';
+GRANT USAGE, REPLICATION CLIENT, PROCESS ON *.* TO 'khulnasoft'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
-The `netdata` user will have the ability to connect to the MySQL server on localhost without a password. It will only
+The `khulnasoft` user will have the ability to connect to the MySQL server on localhost without a password. It will only
 be able to gather statistics without being able to alter or affect operations in any way.
 
 
@@ -238,10 +238,10 @@ The configuration file name for this integration is `go.d/mysql.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/mysql.conf
 ```
 #### Options
@@ -272,7 +272,7 @@ An example configuration.
 ```yaml
 jobs:
   - name: local
-    dsn: netdata@tcp(127.0.0.1:3306)/
+    dsn: khulnasoft@tcp(127.0.0.1:3306)/
 
 ```
 </details>
@@ -286,7 +286,7 @@ An example configuration.
 ```yaml
 jobs:
   - name: local
-    dsn: netdata@unix(/var/lib/mysql/mysql.sock)/
+    dsn: khulnasoft@unix(/var/lib/mysql/mysql.sock)/
 
 ```
 </details>
@@ -331,7 +331,7 @@ Local and remote instances.
 ```yaml
 jobs:
   - name: local
-    dsn: netdata@tcp(127.0.0.1:3306)/
+    dsn: khulnasoft@tcp(127.0.0.1:3306)/
 
   - name: remote
     dsn: netconfig:password@tcp(203.0.113.0:3306)/
@@ -348,17 +348,17 @@ jobs:
 To troubleshoot issues with the `mysql` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

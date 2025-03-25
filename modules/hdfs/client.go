@@ -8,7 +8,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/netdata/go.d.plugin/pkg/web"
+	"github.com/khulnasoft/go.d.plugin/pkg/web"
 )
 
 func newClient(httpClient *http.Client, request web.Request) *client {
@@ -30,7 +30,7 @@ func (c *client) do() (*http.Response, error) {
 	}
 
 	// req.Header.Add("Accept-Encoding", "gzip")
-	// req.Header.Set("User-Agent", "netdata/go.d.plugin")
+	// req.Header.Set("User-Agent", "khulnasoft/go.d.plugin")
 
 	return c.httpClient.Do(req)
 }

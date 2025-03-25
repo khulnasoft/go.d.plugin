@@ -23,7 +23,7 @@ modules:
         metrics_description: >
           This collector monitors the health of NVMe devices using the command line
           tool [nvme](https://github.com/linux-nvme/nvme-cli#nvme-cli), which can only be run by the root user. It uses `sudo` and
-          assumes it is set up so that the netdata user can execute `nvme` as root without a password.
+          assumes it is set up so that the khulnasoft user can execute `nvme` as root without a password.
         method_description: ""
       supported_platforms:
         include: []
@@ -44,12 +44,12 @@ modules:
           - title: Install nvme-cli
             description: |
               See [Distro Support](https://github.com/linux-nvme/nvme-cli#distro-support). Install `nvme-cli` using your distribution's package manager.
-          - title: Allow netdata to execute nvme
+          - title: Allow khulnasoft to execute nvme
             description: |
-              Add the netdata user to `/etc/sudoers` (use `which nvme` to find the full path to the binary):
+              Add the khulnasoft user to `/etc/sudoers` (use `which nvme` to find the full path to the binary):
 
               ```bash
-              netdata ALL=(root) NOPASSWD: /usr/sbin/nvme
+              khulnasoft ALL=(root) NOPASSWD: /usr/sbin/nvme
               ```
       configuration:
         file:
@@ -95,7 +95,7 @@ modules:
       - name: nvme_device_critical_warnings_state
         metric: nvme.device_critical_warnings_state
         info: "NVMe device ${label:device} has critical warnings"
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/nvme.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/nvme.conf
     metrics:
       folding:
         title: Metrics

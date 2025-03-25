@@ -5,8 +5,8 @@ package pika
 import (
 	"errors"
 
-	"github.com/netdata/go.d.plugin/agent/module"
-	"github.com/netdata/go.d.plugin/pkg/tlscfg"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/pkg/tlscfg"
 
 	"github.com/go-redis/redis/v8"
 )

@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/consul/README.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/consul/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/consul/README.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/consul/metadata.yaml"
 sidebar_label: "Consul"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/Service Discovery / Registry"
@@ -11,13 +11,13 @@ endmeta-->
 # Consul
 
 
-<img src="https://netdata.cloud/img/consul.svg" width="150"/>
+<img src="https://khulnasoft.com/img/consul.svg" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: consul
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
@@ -160,18 +160,18 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ consul_node_health_check_status ](https://github.com/netdata/netdata/blob/master/src/health/health.d/consul.conf) | consul.node_health_check_status | node health check ${label:check_name} has failed on server ${label:node_name} datacenter ${label:datacenter} |
-| [ consul_service_health_check_status ](https://github.com/netdata/netdata/blob/master/src/health/health.d/consul.conf) | consul.service_health_check_status | service health check ${label:check_name} for service ${label:service_name} has failed on server ${label:node_name} datacenter ${label:datacenter} |
-| [ consul_client_rpc_requests_exceeded ](https://github.com/netdata/netdata/blob/master/src/health/health.d/consul.conf) | consul.client_rpc_requests_exceeded_rate | number of rate-limited RPC requests made by server ${label:node_name} datacenter ${label:datacenter} |
-| [ consul_client_rpc_requests_failed ](https://github.com/netdata/netdata/blob/master/src/health/health.d/consul.conf) | consul.client_rpc_requests_failed_rate | number of failed RPC requests made by server ${label:node_name} datacenter ${label:datacenter} |
-| [ consul_gc_pause_time ](https://github.com/netdata/netdata/blob/master/src/health/health.d/consul.conf) | consul.gc_pause_time | time spent in stop-the-world garbage collection pauses on server ${label:node_name} datacenter ${label:datacenter} |
-| [ consul_autopilot_health_status ](https://github.com/netdata/netdata/blob/master/src/health/health.d/consul.conf) | consul.autopilot_health_status | datacenter ${label:datacenter} cluster is unhealthy as reported by server ${label:node_name} |
-| [ consul_autopilot_server_health_status ](https://github.com/netdata/netdata/blob/master/src/health/health.d/consul.conf) | consul.autopilot_server_health_status | server ${label:node_name} from datacenter ${label:datacenter} is unhealthy |
-| [ consul_raft_leader_last_contact_time ](https://github.com/netdata/netdata/blob/master/src/health/health.d/consul.conf) | consul.raft_leader_last_contact_time | median time elapsed since leader server ${label:node_name} datacenter ${label:datacenter} was last able to contact the follower nodes |
-| [ consul_raft_leadership_transitions ](https://github.com/netdata/netdata/blob/master/src/health/health.d/consul.conf) | consul.raft_leadership_transitions_rate | there has been a leadership change and server ${label:node_name} datacenter ${label:datacenter} has become the leader |
-| [ consul_raft_thread_main_saturation ](https://github.com/netdata/netdata/blob/master/src/health/health.d/consul.conf) | consul.raft_thread_main_saturation_perc | average saturation of the main Raft goroutine on server ${label:node_name} datacenter ${label:datacenter} |
-| [ consul_raft_thread_fsm_saturation ](https://github.com/netdata/netdata/blob/master/src/health/health.d/consul.conf) | consul.raft_thread_fsm_saturation_perc | average saturation of the FSM Raft goroutine on server ${label:node_name} datacenter ${label:datacenter} |
-| [ consul_license_expiration_time ](https://github.com/netdata/netdata/blob/master/src/health/health.d/consul.conf) | consul.license_expiration_time | Consul Enterprise licence expiration time on node ${label:node_name} datacenter ${label:datacenter} |
+| [ consul_node_health_check_status ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/consul.conf) | consul.node_health_check_status | node health check ${label:check_name} has failed on server ${label:node_name} datacenter ${label:datacenter} |
+| [ consul_service_health_check_status ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/consul.conf) | consul.service_health_check_status | service health check ${label:check_name} for service ${label:service_name} has failed on server ${label:node_name} datacenter ${label:datacenter} |
+| [ consul_client_rpc_requests_exceeded ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/consul.conf) | consul.client_rpc_requests_exceeded_rate | number of rate-limited RPC requests made by server ${label:node_name} datacenter ${label:datacenter} |
+| [ consul_client_rpc_requests_failed ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/consul.conf) | consul.client_rpc_requests_failed_rate | number of failed RPC requests made by server ${label:node_name} datacenter ${label:datacenter} |
+| [ consul_gc_pause_time ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/consul.conf) | consul.gc_pause_time | time spent in stop-the-world garbage collection pauses on server ${label:node_name} datacenter ${label:datacenter} |
+| [ consul_autopilot_health_status ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/consul.conf) | consul.autopilot_health_status | datacenter ${label:datacenter} cluster is unhealthy as reported by server ${label:node_name} |
+| [ consul_autopilot_server_health_status ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/consul.conf) | consul.autopilot_server_health_status | server ${label:node_name} from datacenter ${label:datacenter} is unhealthy |
+| [ consul_raft_leader_last_contact_time ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/consul.conf) | consul.raft_leader_last_contact_time | median time elapsed since leader server ${label:node_name} datacenter ${label:datacenter} was last able to contact the follower nodes |
+| [ consul_raft_leadership_transitions ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/consul.conf) | consul.raft_leadership_transitions_rate | there has been a leadership change and server ${label:node_name} datacenter ${label:datacenter} has become the leader |
+| [ consul_raft_thread_main_saturation ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/consul.conf) | consul.raft_thread_main_saturation_perc | average saturation of the main Raft goroutine on server ${label:node_name} datacenter ${label:datacenter} |
+| [ consul_raft_thread_fsm_saturation ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/consul.conf) | consul.raft_thread_fsm_saturation_perc | average saturation of the FSM Raft goroutine on server ${label:node_name} datacenter ${label:datacenter} |
+| [ consul_license_expiration_time ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/consul.conf) | consul.license_expiration_time | Consul Enterprise licence expiration time on node ${label:node_name} datacenter ${label:datacenter} |
 
 
 ## Setup
@@ -203,10 +203,10 @@ The configuration file name for this integration is `go.d/consul.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/consul.conf
 ```
 #### Options
@@ -223,7 +223,7 @@ The following options can be defined globally: update_every, autodetection_retry
 | url | Server URL. | http://localhost:8500 | yes |
 | acl_token | ACL token used in every request. |  | no |
 | max_checks | Checks processing/charting limit. |  | no |
-| max_filter | Checks processing/charting filter. Uses [simple patterns](https://github.com/netdata/netdata/blob/master/src/libnetdata/simple_pattern/README.md). |  | no |
+| max_filter | Checks processing/charting filter. Uses [simple patterns](https://github.com/khulnasoft/khulnasoft/blob/master/src/libkhulnasoft/simple_pattern/README.md). |  | no |
 | username | Username for basic HTTP authentication. |  | no |
 | password | Password for basic HTTP authentication. |  | no |
 | proxy_url | Proxy URL. |  | no |
@@ -302,17 +302,17 @@ jobs:
 To troubleshoot issues with the `consul` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

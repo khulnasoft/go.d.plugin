@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/vcsa/README.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/vcsa/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/vcsa/README.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/vcsa/metadata.yaml"
 sidebar_label: "vCenter Server Appliance"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/Containers and VMs"
@@ -11,13 +11,13 @@ endmeta-->
 # vCenter Server Appliance
 
 
-<img src="https://netdata.cloud/img/vmware.svg" width="150"/>
+<img src="https://khulnasoft.com/img/vmware.svg" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: vcsa
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
@@ -118,21 +118,21 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ vcsa_system_health_warn ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vcsa.conf) | vcsa.system_health_status | VCSA overall system status is orange. One or more components are degraded. |
-| [ vcsa_system_health_crit ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vcsa.conf) | vcsa.system_health_status | VCSA overall system status is red. One or more components are unavailable or will stop functioning soon. |
-| [ vcsa_applmgmt_health_warn ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vcsa.conf) | vcsa.applmgmt_health_status | VCSA ApplMgmt component status is orange. It is degraded, and may have serious problems. |
-| [ vcsa_applmgmt_health_crit ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vcsa.conf) | vcsa.applmgmt_health_status | VCSA ApplMgmt component status is red. It is unavailable, or will stop functioning soon. |
-| [ vcsa_load_health_warn ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vcsa.conf) | vcsa.load_health_status | VCSA Load component status is orange. It is degraded, and may have serious problems. |
-| [ vcsa_load_health_crit ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vcsa.conf) | vcsa.load_health_status | VCSA Load component status is red. It is unavailable, or will stop functioning soon. |
-| [ vcsa_mem_health_warn ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vcsa.conf) | vcsa.mem_health_status | VCSA Memory component status is orange. It is degraded, and may have serious problems. |
-| [ vcsa_mem_health_crit ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vcsa.conf) | vcsa.mem_health_status | VCSA Memory component status is red. It is unavailable, or will stop functioning soon. |
-| [ vcsa_swap_health_warn ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vcsa.conf) | vcsa.swap_health_status | VCSA Swap component status is orange. It is degraded, and may have serious problems. |
-| [ vcsa_swap_health_crit ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vcsa.conf) | vcsa.swap_health_status | VCSA Swap component status is red. It is unavailable, or will stop functioning soon. |
-| [ vcsa_database_storage_health_warn ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vcsa.conf) | vcsa.database_storage_health_status | VCSA Database Storage component status is orange. It is degraded, and may have serious problems. |
-| [ vcsa_database_storage_health_crit ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vcsa.conf) | vcsa.database_storage_health_status | VCSA Database Storage component status is red. It is unavailable, or will stop functioning soon. |
-| [ vcsa_storage_health_warn ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vcsa.conf) | vcsa.storage_health_status | VCSA Storage component status is orange. It is degraded, and may have serious problems. |
-| [ vcsa_storage_health_crit ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vcsa.conf) | vcsa.storage_health_status | VCSA Storage component status is red. It is unavailable, or will stop functioning soon. |
-| [ vcsa_software_packages_health_warn ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vcsa.conf) | vcsa.software_packages_health_status | VCSA software packages security updates are available. |
+| [ vcsa_system_health_warn ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vcsa.conf) | vcsa.system_health_status | VCSA overall system status is orange. One or more components are degraded. |
+| [ vcsa_system_health_crit ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vcsa.conf) | vcsa.system_health_status | VCSA overall system status is red. One or more components are unavailable or will stop functioning soon. |
+| [ vcsa_applmgmt_health_warn ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vcsa.conf) | vcsa.applmgmt_health_status | VCSA ApplMgmt component status is orange. It is degraded, and may have serious problems. |
+| [ vcsa_applmgmt_health_crit ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vcsa.conf) | vcsa.applmgmt_health_status | VCSA ApplMgmt component status is red. It is unavailable, or will stop functioning soon. |
+| [ vcsa_load_health_warn ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vcsa.conf) | vcsa.load_health_status | VCSA Load component status is orange. It is degraded, and may have serious problems. |
+| [ vcsa_load_health_crit ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vcsa.conf) | vcsa.load_health_status | VCSA Load component status is red. It is unavailable, or will stop functioning soon. |
+| [ vcsa_mem_health_warn ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vcsa.conf) | vcsa.mem_health_status | VCSA Memory component status is orange. It is degraded, and may have serious problems. |
+| [ vcsa_mem_health_crit ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vcsa.conf) | vcsa.mem_health_status | VCSA Memory component status is red. It is unavailable, or will stop functioning soon. |
+| [ vcsa_swap_health_warn ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vcsa.conf) | vcsa.swap_health_status | VCSA Swap component status is orange. It is degraded, and may have serious problems. |
+| [ vcsa_swap_health_crit ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vcsa.conf) | vcsa.swap_health_status | VCSA Swap component status is red. It is unavailable, or will stop functioning soon. |
+| [ vcsa_database_storage_health_warn ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vcsa.conf) | vcsa.database_storage_health_status | VCSA Database Storage component status is orange. It is degraded, and may have serious problems. |
+| [ vcsa_database_storage_health_crit ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vcsa.conf) | vcsa.database_storage_health_status | VCSA Database Storage component status is red. It is unavailable, or will stop functioning soon. |
+| [ vcsa_storage_health_warn ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vcsa.conf) | vcsa.storage_health_status | VCSA Storage component status is orange. It is degraded, and may have serious problems. |
+| [ vcsa_storage_health_crit ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vcsa.conf) | vcsa.storage_health_status | VCSA Storage component status is red. It is unavailable, or will stop functioning soon. |
+| [ vcsa_software_packages_health_warn ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vcsa.conf) | vcsa.software_packages_health_status | VCSA software packages security updates are available. |
 
 
 ## Setup
@@ -149,10 +149,10 @@ The configuration file name for this integration is `go.d/vcsa.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/vcsa.conf
 ```
 #### Options
@@ -235,17 +235,17 @@ jobs:
 To troubleshoot issues with the `vcsa` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

@@ -1,19 +1,19 @@
 <!--
-title: "How to write a Netdata collector in Go"
-description: "This guide will walk you through the technical implementation of writing a new Netdata collector in Golang, with tips on interfaces, structure, configuration files, and more."
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/docs/how-to-write-a-module.md"
-sidebar_label: "How to write a Netdata collector in Go"
+title: "How to write a Khulnasoft collector in Go"
+description: "This guide will walk you through the technical implementation of writing a new Khulnasoft collector in Golang, with tips on interfaces, structure, configuration files, and more."
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/docs/how-to-write-a-module.md"
+sidebar_label: "How to write a Khulnasoft collector in Go"
 learn_status: "Published"
 learn_topic_type: "Tasks"
 learn_rel_path: "Developers/External plugins/go.d.plugin"
 sidebar_position: 20
 -->
 
-# How to write a Netdata collector in Go
+# How to write a Khulnasoft collector in Go
 
 ## Prerequisites
 
-- Take a look at our [contributing guidelines](https://github.com/netdata/.github/blob/main/CONTRIBUTING.md).
+- Take a look at our [contributing guidelines](https://github.com/khulnasoft/.github/blob/main/CONTRIBUTING.md).
 - [Fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) this repository to your personal
   GitHub account.
 - [Clone](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#:~:text=to%20GitHub%20Desktop-,On%20GitHub%2C%20navigate%20to%20the%20main%20page%20of%20the%20repository,Desktop%20to%20complete%20the%20clone.)
@@ -24,29 +24,29 @@ sidebar_position: 20
 ## Write and test a simple collector
 
 > :exclamation: You can skip most of these steps if you first experiment directy with the existing 
-> [example module](https://github.com/netdata/go.d.plugin/tree/master/modules/example), which will 
+> [example module](https://github.com/khulnasoft/go.d.plugin/tree/master/modules/example), which will 
 > give you an idea of  how things work.
 
 Let's assume you want to write a collector named `example2`.
 
 The steps are:
 
-- Add the source code to [`modules/example2/`](https://github.com/netdata/go.d.plugin/tree/master/modules).
+- Add the source code to [`modules/example2/`](https://github.com/khulnasoft/go.d.plugin/tree/master/modules).
     - [module interface](#module-interface).
     - [suggested module layout](#module-layout).
     - [helper packages](#helper-packages).
-- Add the configuration to [`config/go.d/example2.conf`](https://github.com/netdata/go.d.plugin/tree/master/config/go.d).
-- Add the module to [`config/go.d.conf`](https://github.com/netdata/go.d.plugin/blob/master/config/go.d.conf).
-- Import the module in [`modules/init.go`](https://github.com/netdata/go.d.plugin/blob/master/modules/init.go).
-- Update the [`available modules list`](https://github.com/netdata/go.d.plugin#available-modules).
+- Add the configuration to [`config/go.d/example2.conf`](https://github.com/khulnasoft/go.d.plugin/tree/master/config/go.d).
+- Add the module to [`config/go.d.conf`](https://github.com/khulnasoft/go.d.plugin/blob/master/config/go.d.conf).
+- Import the module in [`modules/init.go`](https://github.com/khulnasoft/go.d.plugin/blob/master/modules/init.go).
+- Update the [`available modules list`](https://github.com/khulnasoft/go.d.plugin#available-modules).
 - To build it, run `make` from the plugin root dir. This will create a new `go.d.plugin` binary that includes your newly
   developed collector. It will be placed into the `bin` directory (e.g `go.d.plugin/bin`)
 - Run it in the debug mode `bin/godplugin -d -m <MODULE_NAME>`. This will output the `STDOUT` of the collector, the same
-  output that is sent to the Netdata Agent and is transformed into charts. You can read more about this collector API in
-  our [documentation](https://github.com/netdata/netdata/blob/master/src/collectors/plugins.d/README.md#external-plugins-api).
-- If you want to test the collector with the actual Netdata Agent, you need to replace the `go.d.plugin` binary that
-  exists in the Netdata Agent installation directory with the one you just compiled. Once
-  you [restart](https://github.com/netdata/netdata/blob/master/docs/configure/start-stop-restart.md) the Netdata Agent, it will detect and run
+  output that is sent to the Khulnasoft Agent and is transformed into charts. You can read more about this collector API in
+  our [documentation](https://github.com/khulnasoft/khulnasoft/blob/master/src/collectors/plugins.d/README.md#external-plugins-api).
+- If you want to test the collector with the actual Khulnasoft Agent, you need to replace the `go.d.plugin` binary that
+  exists in the Khulnasoft Agent installation directory with the one you just compiled. Once
+  you [restart](https://github.com/khulnasoft/khulnasoft/blob/master/docs/configure/start-stop-restart.md) the Khulnasoft Agent, it will detect and run
   it, creating all the charts. It is advised not to remove the default `go.d.plugin` binary, but simply rename it
   to `go.d.plugin.old` so that the Agent doesn't run it, but you can easily rename it back once you are done.
 - Run `make clean` when you are done with testing.
@@ -116,13 +116,13 @@ func (e *Example) Check() bool {
 
 ### Charts method
 
-:exclamation: Netdata module produces [`charts`](https://github.com/netdata/netdata/blob/master/src/collectors/plugins.d/README.md#chart), not
+:exclamation: Khulnasoft module produces [`charts`](https://github.com/khulnasoft/khulnasoft/blob/master/src/collectors/plugins.d/README.md#chart), not
 raw metrics.
 
-Use [`agent/module`](https://github.com/netdata/go.d.plugin/blob/master/agent/module/charts.go) package to create them,
+Use [`agent/module`](https://github.com/khulnasoft/go.d.plugin/blob/master/agent/module/charts.go) package to create them,
 it contains charts and dimensions structs.
 
-- `Charts` returns the [charts](https://github.com/netdata/netdata/blob/master/src/collectors/plugins.d/README.md#chart) (`*module.Charts`).
+- `Charts` returns the [charts](https://github.com/khulnasoft/khulnasoft/blob/master/src/collectors/plugins.d/README.md#chart) (`*module.Charts`).
 - Called after `Check` and only if `Check` returned `true`.
 - If it returns `nil`, the job will be disabled
 - :warning: Make sure not to share returned value between module instances (jobs).
@@ -196,7 +196,7 @@ Suggested minimal layout:
 
 ### File `module_name.go`
 
-> :exclamation: See the example [`example.go`](https://github.com/netdata/go.d.plugin/blob/master/modules/example/example.go).
+> :exclamation: See the example [`example.go`](https://github.com/khulnasoft/go.d.plugin/blob/master/modules/example/example.go).
 
 Don't overload this file with the implementation details.
 
@@ -208,13 +208,13 @@ Usually it contains only:
 
 ### File `charts.go`
 
-> :exclamation: See the example: [`charts.go`](https://github.com/netdata/go.d.plugin/blob/master/modules/example/charts.go).
+> :exclamation: See the example: [`charts.go`](https://github.com/khulnasoft/go.d.plugin/blob/master/modules/example/charts.go).
 
 Put charts, charts templates and charts constructor functions in this file.
 
 ### File `init.go`
 
-> :exclamation: See the example: [`init.go`](https://github.com/netdata/go.d.plugin/blob/master/modules/example/init.go).
+> :exclamation: See the example: [`init.go`](https://github.com/khulnasoft/go.d.plugin/blob/master/modules/example/init.go).
 
 All the module initialization details should go in this file.
 
@@ -240,7 +240,7 @@ func (e *Example) initSomeValue() error {
 
 ### File `collect.go`
 
-> :exclamation: See the example: [`collect.go`](https://github.com/netdata/go.d.plugin/blob/master/modules/example/collect.go).
+> :exclamation: See the example: [`collect.go`](https://github.com/khulnasoft/go.d.plugin/blob/master/modules/example/collect.go).
 
 This file is the entry point for the metrics collection.
 
@@ -262,7 +262,7 @@ func (e *Example) collect() (map[string]int64, error) {
 
 ### File `module_name_test.go`
 
-> :exclamation: See the example: [`example_test.go`](https://github.com/netdata/go.d.plugin/blob/master/modules/example/example_test.go).
+> :exclamation: See the example: [`example_test.go`](https://github.com/khulnasoft/go.d.plugin/blob/master/modules/example/example_test.go).
 
 > if you have no experience in testing we recommend starting with [testing package documentation](https://golang.org/pkg/testing/).
 
@@ -285,5 +285,5 @@ be [`testdata`](https://golang.org/cmd/go/#hdr-Package_lists_and_patterns).
 
 ## Helper packages
 
-There are [some helper packages](https://github.com/netdata/go.d.plugin/tree/master/pkg) for writing a module.
+There are [some helper packages](https://github.com/khulnasoft/go.d.plugin/tree/master/pkg) for writing a module.
 

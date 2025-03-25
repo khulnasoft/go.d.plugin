@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/unbound/README.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/unbound/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/unbound/README.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/unbound/metadata.yaml"
 sidebar_label: "Unbound"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/DNS and DHCP Servers"
@@ -11,13 +11,13 @@ endmeta-->
 # Unbound
 
 
-<img src="https://netdata.cloud/img/unbound.png" width="150"/>
+<img src="https://khulnasoft.com/img/unbound.png" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: unbound
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
@@ -134,7 +134,7 @@ Set `control-enable` to yes in [unbound.conf](https://nlnetlabs.nl/documentation
 
 If using unix socket:
 
-- socket should be readable and writeable by `netdata` user
+- socket should be readable and writeable by `khulnasoft` user
 
 If using ip socket and TLS is disabled:
 
@@ -142,13 +142,13 @@ If using ip socket and TLS is disabled:
 
 If TLS is enabled, in addition:
 
-- `control-key-file` should be readable by `netdata` user
-- `control-cert-file` should be readable by `netdata` user
+- `control-key-file` should be readable by `khulnasoft` user
+- `control-cert-file` should be readable by `khulnasoft` user
 
 For auto-detection parameters from `unbound.conf`:
 
-- `unbound.conf` should be readable by `netdata` user
-- if you have several configuration files (include feature) all of them should be readable by `netdata` user
+- `unbound.conf` should be readable by `khulnasoft` user
+- if you have several configuration files (include feature) all of them should be readable by `khulnasoft` user
 
 
 
@@ -160,10 +160,10 @@ The configuration file name for this integration is `go.d/unbound.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/unbound.conf
 ```
 #### Options
@@ -248,17 +248,17 @@ jobs:
 To troubleshoot issues with the `unbound` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

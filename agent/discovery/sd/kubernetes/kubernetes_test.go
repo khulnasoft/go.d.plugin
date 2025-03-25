@@ -7,8 +7,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/netdata/go.d.plugin/agent/discovery/sd/model"
-	"github.com/netdata/go.d.plugin/pkg/k8sclient"
+	"github.com/khulnasoft/go.d.plugin/agent/discovery/sd/model"
+	"github.com/khulnasoft/go.d.plugin/pkg/k8sclient"
 
 	"github.com/stretchr/testify/assert"
 	corev1 "k8s.io/api/core/v1"

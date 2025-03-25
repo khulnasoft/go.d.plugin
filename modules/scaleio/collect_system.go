@@ -2,7 +2,7 @@
 
 package scaleio
 
-import "github.com/netdata/go.d.plugin/modules/scaleio/client"
+import "github.com/khulnasoft/go.d.plugin/modules/scaleio/client"
 
 func (ScaleIO) collectSystem(ss client.SystemStatistics) systemMetrics {
 	var sm systemMetrics

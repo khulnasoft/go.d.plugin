@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/postgres/README.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/postgres/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/postgres/README.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/postgres/metadata.yaml"
 sidebar_label: "PostgreSQL"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/Databases"
@@ -11,13 +11,13 @@ endmeta-->
 # PostgreSQL
 
 
-<img src="https://netdata.cloud/img/postgres.svg" width="150"/>
+<img src="https://khulnasoft.com/img/postgres.svg" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: postgres
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
@@ -37,7 +37,7 @@ This collector supports collecting metrics from multiple instances of this integ
 
 #### Auto-Detection
 
-By default, it detects instances running on localhost by trying to connect as root and netdata using known PostgreSQL TCP and UNIX sockets:
+By default, it detects instances running on localhost by trying to connect as root and khulnasoft using known PostgreSQL TCP and UNIX sockets:
 
 - 127.0.0.1:5432
 - /var/run/postgresql/
@@ -234,40 +234,40 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ postgres_total_connection_utilization ](https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf) | postgres.connections_utilization | average total connection utilization over the last minute |
-| [ postgres_acquired_locks_utilization ](https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf) | postgres.locks_utilization | average acquired locks utilization over the last minute |
-| [ postgres_txid_exhaustion_perc ](https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf) | postgres.txid_exhaustion_perc | percent towards TXID wraparound |
-| [ postgres_db_cache_io_ratio ](https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf) | postgres.db_cache_io_ratio | average cache hit ratio in db ${label:database} over the last minute |
-| [ postgres_db_transactions_rollback_ratio ](https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf) | postgres.db_cache_io_ratio | average aborted transactions percentage in db ${label:database} over the last five minutes |
-| [ postgres_db_deadlocks_rate ](https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf) | postgres.db_deadlocks_rate | number of deadlocks detected in db ${label:database} in the last minute |
-| [ postgres_table_cache_io_ratio ](https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf) | postgres.table_cache_io_ratio | average cache hit ratio in db ${label:database} table ${label:table} over the last minute |
-| [ postgres_table_index_cache_io_ratio ](https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf) | postgres.table_index_cache_io_ratio | average index cache hit ratio in db ${label:database} table ${label:table} over the last minute |
-| [ postgres_table_toast_cache_io_ratio ](https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf) | postgres.table_toast_cache_io_ratio | average TOAST hit ratio in db ${label:database} table ${label:table} over the last minute |
-| [ postgres_table_toast_index_cache_io_ratio ](https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf) | postgres.table_toast_index_cache_io_ratio | average index TOAST hit ratio in db ${label:database} table ${label:table} over the last minute |
-| [ postgres_table_bloat_size_perc ](https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf) | postgres.table_bloat_size_perc | bloat size percentage in db ${label:database} table ${label:table} |
-| [ postgres_table_last_autovacuum_time ](https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf) | postgres.table_autovacuum_since_time | time elapsed since db ${label:database} table ${label:table} was vacuumed by the autovacuum daemon |
-| [ postgres_table_last_autoanalyze_time ](https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf) | postgres.table_autoanalyze_since_time | time elapsed since db ${label:database} table ${label:table} was analyzed by the autovacuum daemon |
-| [ postgres_index_bloat_size_perc ](https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf) | postgres.index_bloat_size_perc | bloat size percentage in db ${label:database} table ${label:table} index ${label:index} |
+| [ postgres_total_connection_utilization ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf) | postgres.connections_utilization | average total connection utilization over the last minute |
+| [ postgres_acquired_locks_utilization ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf) | postgres.locks_utilization | average acquired locks utilization over the last minute |
+| [ postgres_txid_exhaustion_perc ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf) | postgres.txid_exhaustion_perc | percent towards TXID wraparound |
+| [ postgres_db_cache_io_ratio ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf) | postgres.db_cache_io_ratio | average cache hit ratio in db ${label:database} over the last minute |
+| [ postgres_db_transactions_rollback_ratio ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf) | postgres.db_cache_io_ratio | average aborted transactions percentage in db ${label:database} over the last five minutes |
+| [ postgres_db_deadlocks_rate ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf) | postgres.db_deadlocks_rate | number of deadlocks detected in db ${label:database} in the last minute |
+| [ postgres_table_cache_io_ratio ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf) | postgres.table_cache_io_ratio | average cache hit ratio in db ${label:database} table ${label:table} over the last minute |
+| [ postgres_table_index_cache_io_ratio ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf) | postgres.table_index_cache_io_ratio | average index cache hit ratio in db ${label:database} table ${label:table} over the last minute |
+| [ postgres_table_toast_cache_io_ratio ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf) | postgres.table_toast_cache_io_ratio | average TOAST hit ratio in db ${label:database} table ${label:table} over the last minute |
+| [ postgres_table_toast_index_cache_io_ratio ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf) | postgres.table_toast_index_cache_io_ratio | average index TOAST hit ratio in db ${label:database} table ${label:table} over the last minute |
+| [ postgres_table_bloat_size_perc ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf) | postgres.table_bloat_size_perc | bloat size percentage in db ${label:database} table ${label:table} |
+| [ postgres_table_last_autovacuum_time ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf) | postgres.table_autovacuum_since_time | time elapsed since db ${label:database} table ${label:table} was vacuumed by the autovacuum daemon |
+| [ postgres_table_last_autoanalyze_time ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf) | postgres.table_autoanalyze_since_time | time elapsed since db ${label:database} table ${label:table} was analyzed by the autovacuum daemon |
+| [ postgres_index_bloat_size_perc ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf) | postgres.index_bloat_size_perc | bloat size percentage in db ${label:database} table ${label:table} index ${label:index} |
 
 
 ## Setup
 
 ### Prerequisites
 
-#### Create netdata user
+#### Create khulnasoft user
 
 Create a user with granted `pg_monitor`
 or `pg_read_all_stat` [built-in role](https://www.postgresql.org/docs/current/predefined-roles.html).
 
-To create the `netdata` user with these permissions, execute the following in the psql session, as a user with CREATEROLE privileges:
+To create the `khulnasoft` user with these permissions, execute the following in the psql session, as a user with CREATEROLE privileges:
 
 ```postgresql
-CREATE USER netdata;
-GRANT pg_monitor TO netdata;
+CREATE USER khulnasoft;
+GRANT pg_monitor TO khulnasoft;
 ```
 
-After creating the new user, restart the Netdata agent with `sudo systemctl restart netdata`, or
-the [appropriate method](https://github.com/netdata/netdata/blob/master/docs/configure/start-stop-restart.md) for your
+After creating the new user, restart the Khulnasoft agent with `sudo systemctl restart khulnasoft`, or
+the [appropriate method](https://github.com/khulnasoft/khulnasoft/blob/master/docs/configure/start-stop-restart.md) for your
 system.
 
 
@@ -280,10 +280,10 @@ The configuration file name for this integration is `go.d/postgres.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/postgres.conf
 ```
 #### Options
@@ -299,7 +299,7 @@ The following options can be defined globally: update_every, autodetection_retry
 | autodetection_retry | Recheck interval in seconds. Zero means no recheck will be scheduled. | 0 | no |
 | dsn | Postgres server DSN (Data Source Name). See [DSN syntax](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING). | postgres://postgres:postgres@127.0.0.1:5432/postgres | yes |
 | timeout | Query timeout in seconds. | 2 | no |
-| collect_databases_matching | Databases selector. Determines which database metrics will be collected. Syntax is [simple patterns](https://github.com/netdata/go.d.plugin/tree/master/pkg/matcher#simple-patterns-matcher). |  | no |
+| collect_databases_matching | Databases selector. Determines which database metrics will be collected. Syntax is [simple patterns](https://github.com/khulnasoft/go.d.plugin/tree/master/pkg/matcher#simple-patterns-matcher). |  | no |
 | max_db_tables | Maximum number of tables in the database. Table metrics will not be collected for databases that have more tables than max_db_tables. 0 means no limit. | 50 | no |
 | max_db_indexes | Maximum number of indexes in the database. Index metrics will not be collected for databases that have more indexes than max_db_indexes. 0 means no limit. | 250 | no |
 
@@ -314,7 +314,7 @@ An example configuration.
 ```yaml
 jobs:
   - name: local
-    dsn: 'postgresql://netdata@127.0.0.1:5432/postgres'
+    dsn: 'postgresql://khulnasoft@127.0.0.1:5432/postgres'
 
 ```
 ##### Unix socket
@@ -326,7 +326,7 @@ An example configuration.
 ```yaml
 jobs:
   - name: local
-    dsn: 'host=/var/run/postgresql dbname=postgres user=netdata'
+    dsn: 'host=/var/run/postgresql dbname=postgres user=khulnasoft'
 
 ```
 </details>
@@ -343,10 +343,10 @@ Local and remote instances.
 ```yaml
 jobs:
   - name: local
-    dsn: 'postgresql://netdata@127.0.0.1:5432/postgres'
+    dsn: 'postgresql://khulnasoft@127.0.0.1:5432/postgres'
 
   - name: remote
-    dsn: 'postgresql://netdata@203.0.113.0:5432/postgres'
+    dsn: 'postgresql://khulnasoft@203.0.113.0:5432/postgres'
 
 ```
 </details>
@@ -360,17 +360,17 @@ jobs:
 To troubleshoot issues with the `postgres` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

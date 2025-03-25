@@ -6,7 +6,7 @@ import (
 	"regexp"
 	"testing"
 
-	"github.com/netdata/go.d.plugin/agent/discovery/sd/model"
+	"github.com/khulnasoft/go.d.plugin/agent/discovery/sd/model"
 
 	"github.com/stretchr/testify/assert"
 )

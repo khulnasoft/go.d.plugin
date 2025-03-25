@@ -34,7 +34,7 @@ The regexp matcher reports whether the given value matches the RegExp pattern ( 
 The RegExp syntax is described at https://golang.org/pkg/regexp/syntax/.
 
 The simple patterns matcher reports whether the given value matches the simple patterns.
-The simple patterns is a custom format used in netdata,
-it's syntax is described at https://docs.netdata.cloud/libnetdata/simple_pattern/.
+The simple patterns is a custom format used in khulnasoft,
+it's syntax is described at https://docs.khulnasoft.com/libkhulnasoft/simple_pattern/.
 */
 package matcher

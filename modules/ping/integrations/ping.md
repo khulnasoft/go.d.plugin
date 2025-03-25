@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/ping/README.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/ping/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/ping/README.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/ping/metadata.yaml"
 sidebar_label: "Ping"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/Synthetic Checks"
@@ -11,13 +11,13 @@ endmeta-->
 # Ping
 
 
-<img src="https://netdata.cloud/img/globe.svg" width="150"/>
+<img src="https://khulnasoft.com/img/globe.svg" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: ping
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
@@ -27,10 +27,10 @@ There are two operational modes:
 
 - privileged (send raw ICMP ping, default). Requires
   CAP_NET_RAW [capability](https://man7.org/linux/man-pages/man7/capabilities.7.html) or root privileges:
-  > **Note**: set automatically during Netdata installation.
+  > **Note**: set automatically during Khulnasoft installation.
 
   ```bash
-  sudo setcap CAP_NET_RAW=eip <INSTALL_PREFIX>/usr/libexec/netdata/plugins.d/go.d.plugin
+  sudo setcap CAP_NET_RAW=eip <INSTALL_PREFIX>/usr/libexec/khulnasoft/plugins.d/go.d.plugin
   ```
 
 - unprivileged (send UDP ping, Linux only).
@@ -101,9 +101,9 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ ping_host_reachable ](https://github.com/netdata/netdata/blob/master/src/health/health.d/ping.conf) | ping.host_packet_loss | network host ${lab1el:host} reachability status |
-| [ ping_packet_loss ](https://github.com/netdata/netdata/blob/master/src/health/health.d/ping.conf) | ping.host_packet_loss | packet loss percentage to the network host ${label:host} over the last 10 minutes |
-| [ ping_host_latency ](https://github.com/netdata/netdata/blob/master/src/health/health.d/ping.conf) | ping.host_rtt | average latency to the network host ${label:host} over the last 10 seconds |
+| [ ping_host_reachable ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/ping.conf) | ping.host_packet_loss | network host ${lab1el:host} reachability status |
+| [ ping_packet_loss ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/ping.conf) | ping.host_packet_loss | packet loss percentage to the network host ${label:host} over the last 10 minutes |
+| [ ping_host_latency ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/ping.conf) | ping.host_rtt | average latency to the network host ${label:host} over the last 10 seconds |
 
 
 ## Setup
@@ -120,10 +120,10 @@ The configuration file name for this integration is `go.d/ping.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/ping.conf
 ```
 #### Options
@@ -214,17 +214,17 @@ jobs:
 To troubleshoot issues with the `ping` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

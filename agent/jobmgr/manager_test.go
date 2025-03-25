@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/netdata/go.d.plugin/agent/confgroup"
-	"github.com/netdata/go.d.plugin/agent/module"
-	"github.com/netdata/go.d.plugin/agent/safewriter"
+	"github.com/khulnasoft/go.d.plugin/agent/confgroup"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/agent/safewriter"
 	"github.com/stretchr/testify/assert"
 )
 

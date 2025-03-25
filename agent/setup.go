@@ -7,13 +7,13 @@ import (
 	"os"
 	"strings"
 
-	"github.com/netdata/go.d.plugin/agent/confgroup"
-	"github.com/netdata/go.d.plugin/agent/discovery"
-	"github.com/netdata/go.d.plugin/agent/discovery/dummy"
-	"github.com/netdata/go.d.plugin/agent/discovery/file"
-	"github.com/netdata/go.d.plugin/agent/hostinfo"
-	"github.com/netdata/go.d.plugin/agent/module"
-	"github.com/netdata/go.d.plugin/agent/vnodes"
+	"github.com/khulnasoft/go.d.plugin/agent/confgroup"
+	"github.com/khulnasoft/go.d.plugin/agent/discovery"
+	"github.com/khulnasoft/go.d.plugin/agent/discovery/dummy"
+	"github.com/khulnasoft/go.d.plugin/agent/discovery/file"
+	"github.com/khulnasoft/go.d.plugin/agent/hostinfo"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/agent/vnodes"
 
 	"gopkg.in/yaml.v2"
 )
@@ -56,7 +56,7 @@ func (a *Agent) loadEnabledModules(cfg config) module.Registry {
 			continue
 		}
 		if all {
-			// Known issue: go.d/logind high CPU usage on Alma Linux8 (https://github.com/netdata/netdata/issues/15930)
+			// Known issue: go.d/logind high CPU usage on Alma Linux8 (https://github.com/khulnasoft/khulnasoft/issues/15930)
 			if !cfg.isExplicitlyEnabled(name) && (creator.Disabled || name == "logind" && hostinfo.SystemdVersion == 239) {
 				a.Infof("'%s' module disabled by default, should be explicitly enabled in the config", name)
 				continue
@@ -105,7 +105,7 @@ func (a *Agent) buildDiscoveryConf(enabled module.Registry) discovery.Config {
 
 	for name := range enabled {
 		// TODO: properly handle module renaming
-		// We need to announce this change in Netdata v1.39.0 release notes and then remove this workaround.
+		// We need to announce this change in Khulnasoft v1.39.0 release notes and then remove this workaround.
 		// This is just a quick fix for wmi=>windows. We need to prefer user wmi.conf over windows.conf
 		// 2nd part of this fix is in /agent/job/discovery/file/parse.go parseStaticFormat()
 		if name == "windows" {
@@ -114,7 +114,7 @@ func (a *Agent) buildDiscoveryConf(enabled module.Registry) discovery.Config {
 
 			path, err := a.ModulesConfDir.Find(cfgName)
 
-			if err == nil && strings.Contains(path, "etc/netdata") {
+			if err == nil && strings.Contains(path, "etc/khulnasoft") {
 				a.Infof("found '%s", path)
 				readPaths = append(readPaths, path)
 				continue
@@ -193,7 +193,7 @@ func loadYAML(conf interface{}, path string) error {
 var (
 	envKubeHost         = os.Getenv("KUBERNETES_SERVICE_HOST")
 	envKubePort         = os.Getenv("KUBERNETES_SERVICE_PORT")
-	envNDStockConfigDir = os.Getenv("NETDATA_STOCK_CONFIG_DIR")
+	envNDStockConfigDir = os.Getenv("KHULNASOFT_STOCK_CONFIG_DIR")
 )
 
 func isInsideK8sCluster() bool { return envKubeHost != "" && envKubePort != "" }

@@ -7,10 +7,10 @@ import (
 	"errors"
 	"time"
 
-	"github.com/netdata/go.d.plugin/pkg/prometheus"
-	"github.com/netdata/go.d.plugin/pkg/web"
+	"github.com/khulnasoft/go.d.plugin/pkg/prometheus"
+	"github.com/khulnasoft/go.d.plugin/pkg/web"
 
-	"github.com/netdata/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
 )
 
 // DefaultMetricsSampleInterval hard coded to 10

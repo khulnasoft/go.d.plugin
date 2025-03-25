@@ -12,18 +12,18 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/netdata/go.d.plugin/agent/confgroup"
-	"github.com/netdata/go.d.plugin/agent/discovery"
-	"github.com/netdata/go.d.plugin/agent/filelock"
-	"github.com/netdata/go.d.plugin/agent/filestatus"
-	"github.com/netdata/go.d.plugin/agent/functions"
-	"github.com/netdata/go.d.plugin/agent/jobmgr"
-	"github.com/netdata/go.d.plugin/agent/module"
-	"github.com/netdata/go.d.plugin/agent/netdataapi"
-	"github.com/netdata/go.d.plugin/agent/safewriter"
-	"github.com/netdata/go.d.plugin/agent/vnodes"
-	"github.com/netdata/go.d.plugin/logger"
-	"github.com/netdata/go.d.plugin/pkg/multipath"
+	"github.com/khulnasoft/go.d.plugin/agent/confgroup"
+	"github.com/khulnasoft/go.d.plugin/agent/discovery"
+	"github.com/khulnasoft/go.d.plugin/agent/filelock"
+	"github.com/khulnasoft/go.d.plugin/agent/filestatus"
+	"github.com/khulnasoft/go.d.plugin/agent/functions"
+	"github.com/khulnasoft/go.d.plugin/agent/jobmgr"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/agent/khulnasoftapi"
+	"github.com/khulnasoft/go.d.plugin/agent/safewriter"
+	"github.com/khulnasoft/go.d.plugin/agent/vnodes"
+	"github.com/khulnasoft/go.d.plugin/logger"
+	"github.com/khulnasoft/go.d.plugin/pkg/multipath"
 
 	"github.com/mattn/go-isatty"
 )
@@ -60,7 +60,7 @@ type Agent struct {
 	ModuleRegistry    module.Registry
 	Out               io.Writer
 
-	api *netdataapi.API
+	api *khulnasoftapi.API
 }
 
 // New creates a new Agent.
@@ -80,7 +80,7 @@ func New(cfg Config) *Agent {
 		MinUpdateEvery:    cfg.MinUpdateEvery,
 		ModuleRegistry:    module.DefaultRegistry,
 		Out:               safewriter.Stdout,
-		api:               netdataapi.New(safewriter.Stdout),
+		api:               khulnasoftapi.New(safewriter.Stdout),
 	}
 }
 
@@ -185,11 +185,11 @@ func (a *Agent) run(ctx context.Context) {
 	jobsManager.Out = a.Out
 	jobsManager.Modules = enabledModules
 
-	// TODO: API will be changed in https://github.com/netdata/netdata/pull/16702
+	// TODO: API will be changed in https://github.com/khulnasoft/khulnasoft/pull/16702
 	//if logger.Level.Enabled(slog.LevelDebug) {
 	//	dyncfgDiscovery, _ := dyncfg.NewDiscovery(dyncfg.Config{
 	//		Plugin:               a.Name,
-	//		API:                  netdataapi.New(a.Out),
+	//		API:                  khulnasoftapi.New(a.Out),
 	//		Modules:              enabledModules,
 	//		ModuleConfigDefaults: discCfg.Registry,
 	//		Functions:            functionsManager,

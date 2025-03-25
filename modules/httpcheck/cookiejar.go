@@ -17,7 +17,7 @@ import (
 )
 
 // TODO: implement proper cookie auth support
-// relevant forum topic: https://community.netdata.cloud/t/howto-http-endpoint-collector-with-cookie-and-user-pass/3981/5?u=ilyam8
+// relevant forum topic: https://community.khulnasoft.com/t/howto-http-endpoint-collector-with-cookie-and-user-pass/3981/5?u=ilyam8
 
 // cookie file format: https://everything.curl.dev/http/cookies/fileformat
 func loadCookieJar(path string) (http.CookieJar, error) {

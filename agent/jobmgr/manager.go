@@ -12,9 +12,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/netdata/go.d.plugin/agent/confgroup"
-	"github.com/netdata/go.d.plugin/agent/module"
-	"github.com/netdata/go.d.plugin/logger"
+	"github.com/khulnasoft/go.d.plugin/agent/confgroup"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/logger"
 
 	"gopkg.in/yaml.v2"
 )
@@ -365,5 +365,5 @@ func isStockConfig(cfg confgroup.Config) bool {
 	if !strings.HasPrefix(cfg.Provider(), "file") {
 		return false
 	}
-	return !strings.Contains(cfg.Source(), "/etc/netdata")
+	return !strings.Contains(cfg.Source(), "/etc/khulnasoft")
 }

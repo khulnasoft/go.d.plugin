@@ -1,6 +1,6 @@
 <!--
 title: "matcher"
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/pkg/matcher/README.md"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/pkg/matcher/README.md"
 sidebar_label: "matcher"
 learn_status: "Published"
 learn_rel_path: "Developers/External plugins/go.d.plugin/Helper Packages"
@@ -80,15 +80,15 @@ String matcher means **exact match** of the `string`. There are other string mat
 
 This is achievable using the `glob` matcher:
 
-- `* PREFIX*`, means that it matches with any string that *starts* with `PREFIX`, e.g `PREFIXnetdata`
-- `* *SUFFIX`, means that it matches with any string that *ends* with `SUFFIX`, e.g `netdataSUFFIX`
-- `* *SUBSTRING*`, means that it matches with any string that *contains* `SUBSTRING`, e.g `netdataSUBSTRINGnetdata`
+- `* PREFIX*`, means that it matches with any string that *starts* with `PREFIX`, e.g `PREFIXkhulnasoft`
+- `* *SUFFIX`, means that it matches with any string that *ends* with `SUFFIX`, e.g `khulnasoftSUFFIX`
+- `* *SUBSTRING*`, means that it matches with any string that *contains* `SUBSTRING`, e.g `khulnasoftSUBSTRINGkhulnasoft`
 
 ### Glob matcher
 
 The glob matcher reports whether the given value matches the wildcard pattern. It uses the standard `golang`
 library `path`. You can read more about the library in the [golang documentation](https://golang.org/pkg/path/#Match),
-where you can also practice with the library in order to learn the syntax and use it in your Netdata configuration.
+where you can also practice with the library in order to learn the syntax and use it in your Khulnasoft configuration.
 
 The pattern syntax is:
 

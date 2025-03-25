@@ -2,7 +2,7 @@
 
 package redis
 
-import "github.com/netdata/go.d.plugin/agent/module"
+import "github.com/khulnasoft/go.d.plugin/agent/module"
 
 const (
 	prioConnections = module.Priority + iota

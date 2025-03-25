@@ -36,7 +36,7 @@ func newKubeClientInCluster() (*kubernetes.Clientset, error) {
 	if err != nil {
 		return nil, err
 	}
-	config.UserAgent = "Netdata/kube-state"
+	config.UserAgent = "Khulnasoft/kube-state"
 	return kubernetes.NewForConfig(config)
 }
 
@@ -52,7 +52,7 @@ func newKubeClientOutOfCluster() (*kubernetes.Clientset, error) {
 		return nil, err
 	}
 
-	config.UserAgent = "Netdata/kube-state"
+	config.UserAgent = "Khulnasoft/kube-state"
 	return kubernetes.NewForConfig(config)
 }
 

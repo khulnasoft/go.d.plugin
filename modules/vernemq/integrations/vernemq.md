@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/vernemq/README.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/vernemq/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/vernemq/README.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/vernemq/metadata.yaml"
 sidebar_label: "VerneMQ"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/Message Brokers"
@@ -11,13 +11,13 @@ endmeta-->
 # VerneMQ
 
 
-<img src="https://netdata.cloud/img/vernemq.svg" width="150"/>
+<img src="https://khulnasoft.com/img/vernemq.svg" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: vernemq
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
@@ -137,32 +137,32 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ vernemq_socket_errors ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.socket_errors | number of socket errors in the last minute |
-| [ vernemq_queue_message_drop ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.queue_undelivered_messages | number of dropped messaged due to full queues in the last minute |
-| [ vernemq_queue_message_expired ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.queue_undelivered_messages | number of messages which expired before delivery in the last minute |
-| [ vernemq_queue_message_unhandled ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.queue_undelivered_messages | number of unhandled messages (connections with clean session=true) in the last minute |
-| [ vernemq_average_scheduler_utilization ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.average_scheduler_utilization | average scheduler utilization over the last 10 minutes |
-| [ vernemq_cluster_dropped ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.cluster_dropped | amount of traffic dropped during communication with the cluster nodes in the last minute |
-| [ vernemq_netsplits ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vvernemq.netsplits | number of detected netsplits (split brain situation) in the last minute |
-| [ vernemq_mqtt_connack_sent_reason_unsuccessful ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_connack_sent_reason | number of sent unsuccessful v3/v5 CONNACK packets in the last minute |
-| [ vernemq_mqtt_disconnect_received_reason_not_normal ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_disconnect_received_reason | number of received not normal v5 DISCONNECT packets in the last minute |
-| [ vernemq_mqtt_disconnect_sent_reason_not_normal ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_disconnect_sent_reason | number of sent not normal v5 DISCONNECT packets in the last minute |
-| [ vernemq_mqtt_subscribe_error ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_subscribe_error | number of failed v3/v5 SUBSCRIBE operations in the last minute |
-| [ vernemq_mqtt_subscribe_auth_error ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_subscribe_auth_error | number of unauthorized v3/v5 SUBSCRIBE attempts in the last minute |
-| [ vernemq_mqtt_unsubscribe_error ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_unsubscribe_error | number of failed v3/v5 UNSUBSCRIBE operations in the last minute |
-| [ vernemq_mqtt_publish_errors ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_publish_errors | number of failed v3/v5 PUBLISH operations in the last minute |
-| [ vernemq_mqtt_publish_auth_errors ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_publish_auth_errors | number of unauthorized v3/v5 PUBLISH attempts in the last minute |
-| [ vernemq_mqtt_puback_received_reason_unsuccessful ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_puback_received_reason | number of received unsuccessful v5 PUBACK packets in the last minute |
-| [ vernemq_mqtt_puback_sent_reason_unsuccessful ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_puback_sent_reason | number of sent unsuccessful v5 PUBACK packets in the last minute |
-| [ vernemq_mqtt_puback_unexpected ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_puback_invalid_error | number of received unexpected v3/v5 PUBACK packets in the last minute |
-| [ vernemq_mqtt_pubrec_received_reason_unsuccessful ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_pubrec_received_reason | number of received unsuccessful v5 PUBREC packets in the last minute |
-| [ vernemq_mqtt_pubrec_sent_reason_unsuccessful ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_pubrec_sent_reason | number of sent unsuccessful v5 PUBREC packets in the last minute |
-| [ vernemq_mqtt_pubrec_invalid_error ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_pubrec_invalid_error | number of received unexpected v3 PUBREC packets in the last minute |
-| [ vernemq_mqtt_pubrel_received_reason_unsuccessful ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_pubrel_received_reason | number of received unsuccessful v5 PUBREL packets in the last minute |
-| [ vernemq_mqtt_pubrel_sent_reason_unsuccessful ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_pubrel_sent_reason | number of sent unsuccessful v5 PUBREL packets in the last minute |
-| [ vernemq_mqtt_pubcomp_received_reason_unsuccessful ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_pubcomp_received_reason | number of received unsuccessful v5 PUBCOMP packets in the last minute |
-| [ vernemq_mqtt_pubcomp_sent_reason_unsuccessful ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_pubcomp_sent_reason | number of sent unsuccessful v5 PUBCOMP packets in the last minute |
-| [ vernemq_mqtt_pubcomp_unexpected ](https://github.com/netdata/netdata/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_pubcomp_invalid_error | number of received unexpected v3/v5 PUBCOMP packets in the last minute |
+| [ vernemq_socket_errors ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.socket_errors | number of socket errors in the last minute |
+| [ vernemq_queue_message_drop ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.queue_undelivered_messages | number of dropped messaged due to full queues in the last minute |
+| [ vernemq_queue_message_expired ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.queue_undelivered_messages | number of messages which expired before delivery in the last minute |
+| [ vernemq_queue_message_unhandled ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.queue_undelivered_messages | number of unhandled messages (connections with clean session=true) in the last minute |
+| [ vernemq_average_scheduler_utilization ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.average_scheduler_utilization | average scheduler utilization over the last 10 minutes |
+| [ vernemq_cluster_dropped ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.cluster_dropped | amount of traffic dropped during communication with the cluster nodes in the last minute |
+| [ vernemq_netsplits ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vvernemq.netsplits | number of detected netsplits (split brain situation) in the last minute |
+| [ vernemq_mqtt_connack_sent_reason_unsuccessful ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_connack_sent_reason | number of sent unsuccessful v3/v5 CONNACK packets in the last minute |
+| [ vernemq_mqtt_disconnect_received_reason_not_normal ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_disconnect_received_reason | number of received not normal v5 DISCONNECT packets in the last minute |
+| [ vernemq_mqtt_disconnect_sent_reason_not_normal ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_disconnect_sent_reason | number of sent not normal v5 DISCONNECT packets in the last minute |
+| [ vernemq_mqtt_subscribe_error ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_subscribe_error | number of failed v3/v5 SUBSCRIBE operations in the last minute |
+| [ vernemq_mqtt_subscribe_auth_error ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_subscribe_auth_error | number of unauthorized v3/v5 SUBSCRIBE attempts in the last minute |
+| [ vernemq_mqtt_unsubscribe_error ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_unsubscribe_error | number of failed v3/v5 UNSUBSCRIBE operations in the last minute |
+| [ vernemq_mqtt_publish_errors ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_publish_errors | number of failed v3/v5 PUBLISH operations in the last minute |
+| [ vernemq_mqtt_publish_auth_errors ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_publish_auth_errors | number of unauthorized v3/v5 PUBLISH attempts in the last minute |
+| [ vernemq_mqtt_puback_received_reason_unsuccessful ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_puback_received_reason | number of received unsuccessful v5 PUBACK packets in the last minute |
+| [ vernemq_mqtt_puback_sent_reason_unsuccessful ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_puback_sent_reason | number of sent unsuccessful v5 PUBACK packets in the last minute |
+| [ vernemq_mqtt_puback_unexpected ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_puback_invalid_error | number of received unexpected v3/v5 PUBACK packets in the last minute |
+| [ vernemq_mqtt_pubrec_received_reason_unsuccessful ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_pubrec_received_reason | number of received unsuccessful v5 PUBREC packets in the last minute |
+| [ vernemq_mqtt_pubrec_sent_reason_unsuccessful ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_pubrec_sent_reason | number of sent unsuccessful v5 PUBREC packets in the last minute |
+| [ vernemq_mqtt_pubrec_invalid_error ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_pubrec_invalid_error | number of received unexpected v3 PUBREC packets in the last minute |
+| [ vernemq_mqtt_pubrel_received_reason_unsuccessful ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_pubrel_received_reason | number of received unsuccessful v5 PUBREL packets in the last minute |
+| [ vernemq_mqtt_pubrel_sent_reason_unsuccessful ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_pubrel_sent_reason | number of sent unsuccessful v5 PUBREL packets in the last minute |
+| [ vernemq_mqtt_pubcomp_received_reason_unsuccessful ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_pubcomp_received_reason | number of received unsuccessful v5 PUBCOMP packets in the last minute |
+| [ vernemq_mqtt_pubcomp_sent_reason_unsuccessful ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_pubcomp_sent_reason | number of sent unsuccessful v5 PUBCOMP packets in the last minute |
+| [ vernemq_mqtt_pubcomp_unexpected ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/vernemq.conf) | vernemq.mqtt_pubcomp_invalid_error | number of received unexpected v3/v5 PUBCOMP packets in the last minute |
 
 
 ## Setup
@@ -179,10 +179,10 @@ The configuration file name for this integration is `go.d/vernemq.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/vernemq.conf
 ```
 #### Options
@@ -275,17 +275,17 @@ jobs:
 To troubleshoot issues with the `vernemq` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

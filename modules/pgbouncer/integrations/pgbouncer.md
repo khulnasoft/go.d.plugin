@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/pgbouncer/README.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/pgbouncer/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/pgbouncer/README.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/pgbouncer/metadata.yaml"
 sidebar_label: "PgBouncer"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/Databases"
@@ -11,13 +11,13 @@ endmeta-->
 # PgBouncer
 
 
-<img src="https://netdata.cloud/img/postgres.svg" width="150"/>
+<img src="https://khulnasoft.com/img/postgres.svg" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: pgbouncer
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
@@ -115,28 +115,28 @@ There are no alerts configured by default for this integration.
 
 ### Prerequisites
 
-#### Create netdata user
+#### Create khulnasoft user
 
 Create a user with `stats_users` permissions to query your PgBouncer instance.
 
-To create the `netdata` user:
+To create the `khulnasoft` user:
 
-- Add `netdata` user to the `pgbouncer.ini` file:
+- Add `khulnasoft` user to the `pgbouncer.ini` file:
 
   ```text
-  stats_users = netdata
+  stats_users = khulnasoft
   ```
 
-- Add a password for the `netdata` user to the `userlist.txt` file:
+- Add a password for the `khulnasoft` user to the `userlist.txt` file:
 
   ```text
-  "netdata" "<PASSWORD>"
+  "khulnasoft" "<PASSWORD>"
   ```
 
 - To verify the credentials, run the following command
 
   ```bash
-  psql -h localhost -U netdata -p 6432 pgbouncer -c "SHOW VERSION;" >/dev/null 2>&1 && echo OK || echo FAIL
+  psql -h localhost -U khulnasoft -p 6432 pgbouncer -c "SHOW VERSION;" >/dev/null 2>&1 && echo OK || echo FAIL
   ```
 
   When it prompts for a password, enter the password you added to `userlist.txt`.
@@ -151,10 +151,10 @@ The configuration file name for this integration is `go.d/pgbouncer.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/pgbouncer.conf
 ```
 #### Options
@@ -232,17 +232,17 @@ jobs:
 To troubleshoot issues with the `pgbouncer` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

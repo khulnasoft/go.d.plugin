@@ -7,14 +7,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/netdata/go.d.plugin/pkg/matcher"
+	"github.com/khulnasoft/go.d.plugin/pkg/matcher"
 
-	mtx "github.com/netdata/go.d.plugin/pkg/metrics"
-	"github.com/netdata/go.d.plugin/pkg/prometheus"
-	"github.com/netdata/go.d.plugin/pkg/stm"
-	"github.com/netdata/go.d.plugin/pkg/web"
+	mtx "github.com/khulnasoft/go.d.plugin/pkg/metrics"
+	"github.com/khulnasoft/go.d.plugin/pkg/prometheus"
+	"github.com/khulnasoft/go.d.plugin/pkg/stm"
+	"github.com/khulnasoft/go.d.plugin/pkg/web"
 
-	"github.com/netdata/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
 )
 
 //go:embed "config_schema.json"

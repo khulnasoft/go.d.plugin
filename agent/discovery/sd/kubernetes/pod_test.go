@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/netdata/go.d.plugin/agent/discovery/sd/model"
+	"github.com/khulnasoft/go.d.plugin/agent/discovery/sd/model"
 
 	"github.com/stretchr/testify/assert"
 	corev1 "k8s.io/api/core/v1"
@@ -493,7 +493,7 @@ func newHTTPDPod() *corev1.Pod {
 			Annotations: map[string]string{"phase": "prod"},
 			Labels:      map[string]string{"app": "httpd", "tier": "frontend"},
 			OwnerReferences: []metav1.OwnerReference{
-				{Name: "netdata-test", Kind: "DaemonSet", Controller: &controllerTrue},
+				{Name: "khulnasoft-test", Kind: "DaemonSet", Controller: &controllerTrue},
 			},
 		},
 		Spec: corev1.PodSpec{
@@ -524,7 +524,7 @@ func newNGINXPod() *corev1.Pod {
 			Annotations: map[string]string{"phase": "prod"},
 			Labels:      map[string]string{"app": "nginx", "tier": "frontend"},
 			OwnerReferences: []metav1.OwnerReference{
-				{Name: "netdata-test", Kind: "DaemonSet", Controller: &controllerTrue},
+				{Name: "khulnasoft-test", Kind: "DaemonSet", Controller: &controllerTrue},
 			},
 		},
 		Spec: corev1.PodSpec{
@@ -591,7 +591,7 @@ func preparePodTargetGroup(pod *corev1.Pod) *podTargetGroup {
 				Labels:         mapAny(pod.Labels),
 				NodeName:       pod.Spec.NodeName,
 				PodIP:          pod.Status.PodIP,
-				ControllerName: "netdata-test",
+				ControllerName: "khulnasoft-test",
 				ControllerKind: "DaemonSet",
 				ContName:       container.Name,
 				Image:          container.Image,

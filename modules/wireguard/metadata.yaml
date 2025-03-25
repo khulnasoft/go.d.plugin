@@ -32,7 +32,7 @@ modules:
             It automatically detects instances running on localhost.
         limits:
           description: |
-            Doesn't work if Netdata or WireGuard is installed in the container.
+            Doesn't work if Khulnasoft or WireGuard is installed in the container.
         performance_impact:
           description: ""
       additional_permissions:

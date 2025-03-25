@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/netdata/go.d.plugin/modules/vsphere/resources"
-	"github.com/netdata/go.d.plugin/pkg/matcher"
+	"github.com/khulnasoft/go.d.plugin/modules/vsphere/resources"
+	"github.com/khulnasoft/go.d.plugin/pkg/matcher"
 
 	"github.com/stretchr/testify/assert"
 )

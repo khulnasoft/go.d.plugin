@@ -7,9 +7,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/netdata/go.d.plugin/pkg/matcher"
-	"github.com/netdata/go.d.plugin/pkg/prometheus"
-	"github.com/netdata/go.d.plugin/pkg/web"
+	"github.com/khulnasoft/go.d.plugin/pkg/matcher"
+	"github.com/khulnasoft/go.d.plugin/pkg/prometheus"
+	"github.com/khulnasoft/go.d.plugin/pkg/web"
 )
 
 func (p *Prometheus) validateConfig() error {

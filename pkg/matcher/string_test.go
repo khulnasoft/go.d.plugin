@@ -16,7 +16,7 @@ var stringMatcherTestCases = []struct {
 	{"", "", true, true, true, true},
 	{"abc", "", false, true, true, true},
 	{"power", "pow", false, true, false, true},
-	{"netdata", "data", false, false, true, true},
+	{"khulnasoft", "data", false, false, true, true},
 	{"abc", "def", false, false, false, false},
 	{"soon", "o", false, false, false, true},
 }

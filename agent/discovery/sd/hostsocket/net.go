@@ -15,8 +15,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/netdata/go.d.plugin/agent/discovery/sd/model"
-	"github.com/netdata/go.d.plugin/logger"
+	"github.com/khulnasoft/go.d.plugin/agent/discovery/sd/model"
+	"github.com/khulnasoft/go.d.plugin/logger"
 
 	"github.com/ilyam8/hashstructure"
 )
@@ -55,7 +55,7 @@ func NewNetSocketDiscoverer(cfg NetworkSocketConfig) (*NetDiscoverer, error) {
 		return nil, fmt.Errorf("parse tags: %v", err)
 	}
 
-	dir := os.Getenv("NETDATA_PLUGINS_DIR")
+	dir := os.Getenv("KHULNASOFT_PLUGINS_DIR")
 	if dir == "" {
 		dir, _ = os.Getwd()
 	}

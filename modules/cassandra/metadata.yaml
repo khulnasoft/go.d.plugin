@@ -58,7 +58,7 @@ modules:
               - Download latest [jmx_exporter](https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/) jar file
                 and install it in a directory where Cassandra can access it.
               - Add
-                the [jmx_exporter.yaml](https://raw.githubusercontent.com/netdata/go.d.plugin/master/modules/cassandra/jmx_exporter.yaml)
+                the [jmx_exporter.yaml](https://raw.githubusercontent.com/khulnasoft/go.d.plugin/master/modules/cassandra/jmx_exporter.yaml)
                 file to `/etc/cassandra`.
               - Add the following line to `/etc/cassandra/cassandra-env.sh`
                 ```

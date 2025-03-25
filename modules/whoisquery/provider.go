@@ -42,7 +42,7 @@ func (f *fromNet) remainingTime() (float64, error) {
 		return 0, err
 	}
 
-	// https://community.netdata.cloud/t/whois-query-monitor-cannot-parse-expiration-time/3485
+	// https://community.khulnasoft.com/t/whois-query-monitor-cannot-parse-expiration-time/3485
 	if strings.Contains(result.Domain.ExpirationDate, " ") {
 		if v, err := time.Parse("2006.01.02 15:04:05", result.Domain.ExpirationDate); err == nil {
 			return time.Until(v).Seconds(), nil

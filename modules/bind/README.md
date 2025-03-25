@@ -1,7 +1,7 @@
 <!--
-title: "Bind9 monitoring with Netdata"
+title: "Bind9 monitoring with Khulnasoft"
 description: "Monitor the health and performance of Bind9 DNS servers with zero configuration, per-second metric granularity, and interactive visualizations."
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/bind/README.md"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/bind/README.md"
 sidebar_label: "Bind9"
 learn_status: "Published"
 learn_topic_type: "References"
@@ -60,10 +60,10 @@ Per View Statistics (the following set will be added for each bind view):
 ## Configuration
 
 Edit the `go.d/bind.conf` configuration file using `edit-config` from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/configure/nodes.md), which is typically at `/etc/netdata`.
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/configure/nodes.md), which is typically at `/etc/khulnasoft`.
 
 ```bash
-cd /etc/netdata # Replace this path with your Netdata config directory
+cd /etc/khulnasoft # Replace this path with your Khulnasoft config directory
 sudo ./edit-config go.d/bind.conf
 ```
 
@@ -85,27 +85,27 @@ jobs:
     permit_view: '!_* *'
 ```
 
-View filter syntax: [simple patterns](https://docs.netdata.cloud/libnetdata/simple_pattern/).
+View filter syntax: [simple patterns](https://docs.khulnasoft.com/libkhulnasoft/simple_pattern/).
 
 For all available options please see
-module [configuration file](https://github.com/netdata/go.d.plugin/blob/master/config/go.d/bind.conf).
+module [configuration file](https://github.com/khulnasoft/go.d.plugin/blob/master/config/go.d/bind.conf).
 
 ## Troubleshooting
 
 To troubleshoot issues with the `bind` collector, run the `go.d.plugin` with the debug option enabled. The output should
 give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

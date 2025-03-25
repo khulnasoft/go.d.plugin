@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-package netdataapi
+package khulnasoftapi
 
 import (
 	"bytes"
@@ -10,8 +10,8 @@ import (
 )
 
 type (
-	// API implements Netdata external plugins API.
-	// https://learn.netdata.cloud/docs/agent/collectors/plugins.d#the-output-of-the-plugin
+	// API implements Khulnasoft external plugins API.
+	// https://learn.khulnasoft.com/docs/agent/collectors/plugins.d#the-output-of-the-plugin
 	API struct {
 		io.Writer
 	}
@@ -125,7 +125,7 @@ func (a *API) END() error {
 	return err
 }
 
-// DISABLE disables this plugin. This will prevent Netdata from restarting the plugin.
+// DISABLE disables this plugin. This will prevent Khulnasoft from restarting the plugin.
 func (a *API) DISABLE() error {
 	_, err := a.Write([]byte("DISABLE\n"))
 	return err

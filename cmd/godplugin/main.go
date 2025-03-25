@@ -11,27 +11,27 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/netdata/go.d.plugin/agent"
-	"github.com/netdata/go.d.plugin/agent/executable"
-	"github.com/netdata/go.d.plugin/cli"
-	"github.com/netdata/go.d.plugin/logger"
-	"github.com/netdata/go.d.plugin/pkg/multipath"
+	"github.com/khulnasoft/go.d.plugin/agent"
+	"github.com/khulnasoft/go.d.plugin/agent/executable"
+	"github.com/khulnasoft/go.d.plugin/cli"
+	"github.com/khulnasoft/go.d.plugin/logger"
+	"github.com/khulnasoft/go.d.plugin/pkg/multipath"
 
 	"github.com/jessevdk/go-flags"
 	"golang.org/x/net/http/httpproxy"
 
-	_ "github.com/netdata/go.d.plugin/modules"
+	_ "github.com/khulnasoft/go.d.plugin/modules"
 )
 
 var (
 	cd, _       = os.Getwd()
 	name        = "go.d"
-	userDir     = os.Getenv("NETDATA_USER_CONFIG_DIR")
-	stockDir    = os.Getenv("NETDATA_STOCK_CONFIG_DIR")
-	varLibDir   = os.Getenv("NETDATA_LIB_DIR")
-	lockDir     = os.Getenv("NETDATA_LOCK_DIR")
-	watchPath   = os.Getenv("NETDATA_PLUGINS_GOD_WATCH_PATH")
-	envLogLevel = os.Getenv("NETDATA_LOG_LEVEL")
+	userDir     = os.Getenv("KHULNASOFT_USER_CONFIG_DIR")
+	stockDir    = os.Getenv("KHULNASOFT_STOCK_CONFIG_DIR")
+	varLibDir   = os.Getenv("KHULNASOFT_LIB_DIR")
+	lockDir     = os.Getenv("KHULNASOFT_LOCK_DIR")
+	watchPath   = os.Getenv("KHULNASOFT_PLUGINS_GOD_WATCH_PATH")
+	envLogLevel = os.Getenv("KHULNASOFT_LOG_LEVEL")
 
 	version = "unknown"
 )
@@ -48,13 +48,13 @@ func confDir(opts *cli.Option) multipath.MultiPath {
 	}
 	if executable.Directory != "" {
 		return multipath.New(
-			filepath.Join(executable.Directory, "/../../../../etc/netdata"),
-			filepath.Join(executable.Directory, "/../../../../usr/lib/netdata/conf.d"),
+			filepath.Join(executable.Directory, "/../../../../etc/khulnasoft"),
+			filepath.Join(executable.Directory, "/../../../../usr/lib/khulnasoft/conf.d"),
 		)
 	}
 	return multipath.New(
-		filepath.Join(cd, "/../../../../etc/netdata"),
-		filepath.Join(cd, "/../../../../usr/lib/netdata/conf.d"),
+		filepath.Join(cd, "/../../../../etc/khulnasoft"),
+		filepath.Join(cd, "/../../../../usr/lib/khulnasoft/conf.d"),
 	)
 }
 
@@ -73,13 +73,13 @@ func modulesConfDir(opts *cli.Option) (mpath multipath.MultiPath) {
 	}
 	if executable.Directory != "" {
 		return multipath.New(
-			filepath.Join(executable.Directory, "/../../../../etc/netdata", name),
-			filepath.Join(executable.Directory, "/../../../../usr/lib/netdata/conf.d", name),
+			filepath.Join(executable.Directory, "/../../../../etc/khulnasoft", name),
+			filepath.Join(executable.Directory, "/../../../../usr/lib/khulnasoft/conf.d", name),
 		)
 	}
 	return multipath.New(
-		filepath.Join(cd, "/../../../../etc/netdata", name),
-		filepath.Join(cd, "/../../../../usr/lib/netdata/conf.d", name),
+		filepath.Join(cd, "/../../../../etc/khulnasoft", name),
+		filepath.Join(cd, "/../../../../usr/lib/khulnasoft/conf.d", name),
 	)
 }
 
@@ -98,7 +98,7 @@ func stateFile() string {
 }
 
 func init() {
-	// https://github.com/netdata/netdata/issues/8949#issuecomment-638294959
+	// https://github.com/khulnasoft/khulnasoft/issues/8949#issuecomment-638294959
 	if v := os.Getenv("TZ"); strings.HasPrefix(v, ":") {
 		_ = os.Unsetenv("TZ")
 	}

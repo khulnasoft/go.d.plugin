@@ -12,7 +12,7 @@ import (
 	"sync/atomic"
 	"syscall"
 
-	"github.com/netdata/go.d.plugin/agent/executable"
+	"github.com/khulnasoft/go.d.plugin/agent/executable"
 
 	"github.com/mattn/go-isatty"
 )

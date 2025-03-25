@@ -47,7 +47,7 @@ modules:
       default_behavior:
         auto_detection:
           description: |
-            By default, it detects instances running on localhost by trying to connect as root and netdata using known MySQL TCP and UNIX sockets:
+            By default, it detects instances running on localhost by trying to connect as root and khulnasoft using known MySQL TCP and UNIX sockets:
             
             - /var/run/mysqld/mysqld.sock
             - /var/run/mysqld/mysql.sock
@@ -67,7 +67,7 @@ modules:
     setup:
       prerequisites:
         list:
-          - title: Create netdata user
+          - title: Create khulnasoft user
             description: |
               A user account should have the
               following [permissions](https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html):
@@ -76,15 +76,15 @@ modules:
               - [`REPLICATION CLIENT`](https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html#priv_replication-client)
               - [`PROCESS`](https://dev.mysql.com/doc/refman/8.0/en/privileges-provided.html#priv_process)
               
-              To create the `netdata` user with these permissions, execute the following in the MySQL shell:
+              To create the `khulnasoft` user with these permissions, execute the following in the MySQL shell:
               
               ```mysql
-              CREATE USER 'netdata'@'localhost';
-              GRANT USAGE, REPLICATION CLIENT, PROCESS ON *.* TO 'netdata'@'localhost';
+              CREATE USER 'khulnasoft'@'localhost';
+              GRANT USAGE, REPLICATION CLIENT, PROCESS ON *.* TO 'khulnasoft'@'localhost';
               FLUSH PRIVILEGES;
               ```
               
-              The `netdata` user will have the ability to connect to the MySQL server on localhost without a password. It will only
+              The `khulnasoft` user will have the ability to connect to the MySQL server on localhost without a password. It will only
               be able to gather statistics without being able to alter or affect operations in any way.
       configuration:
         file:
@@ -126,13 +126,13 @@ modules:
               config: |
                 jobs:
                   - name: local
-                    dsn: netdata@tcp(127.0.0.1:3306)/
+                    dsn: khulnasoft@tcp(127.0.0.1:3306)/
             - name: Unix socket
               description: An example configuration.
               config: |
                 jobs:
                   - name: local
-                    dsn: netdata@unix(/var/lib/mysql/mysql.sock)/
+                    dsn: khulnasoft@unix(/var/lib/mysql/mysql.sock)/
             - name: Connection with password
               description: An example configuration.
               config: |
@@ -153,7 +153,7 @@ modules:
               config: |
                 jobs:
                   - name: local
-                    dsn: netdata@tcp(127.0.0.1:3306)/
+                    dsn: khulnasoft@tcp(127.0.0.1:3306)/
                 
                   - name: remote
                     dsn: netconfig:password@tcp(203.0.113.0:3306)/
@@ -164,51 +164,51 @@ modules:
       - name: mysql_10s_slow_queries
         metric: mysql.queries
         info: number of slow queries in the last 10 seconds
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf
       - name: mysql_10s_table_locks_immediate
         metric: mysql.table_locks
         info: number of table immediate locks in the last 10 seconds
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf
       - name: mysql_10s_table_locks_waited
         metric: mysql.table_locks
         info: number of table waited locks in the last 10 seconds
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf
       - name: mysql_10s_waited_locks_ratio
         metric: mysql.table_locks
         info: ratio of waited table locks over the last 10 seconds
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf
       - name: mysql_connections
         metric: mysql.connections_active
         info: client connections utilization
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf
       - name: mysql_replication
         metric: mysql.slave_status
         info: "replication status (0: stopped, 1: working)"
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf
       - name: mysql_replication_lag
         metric: mysql.slave_behind
         info: difference between the timestamp of the latest transaction processed by the SQL thread and the timestamp of the same transaction when it was processed on the master
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf
       - name: mysql_galera_cluster_size_max_2m
         metric: mysql.galera_cluster_size
         info: maximum galera cluster size in the last 2 minutes starting one minute ago
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf
       - name: mysql_galera_cluster_size
         metric: mysql.galera_cluster_size
         info: current galera cluster size, compared to the maximum size in the last 2 minutes
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf
       - name: mysql_galera_cluster_state_warn
         metric: mysql.galera_cluster_state
         info: galera node state is either Donor/Desynced or Joined
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf
       - name: mysql_galera_cluster_state_crit
         metric: mysql.galera_cluster_state
         info: galera node state is either Undefined or Joining or Error
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf
       - name: mysql_galera_cluster_status
         metric: mysql.galera_cluster_status
         info: galera node is part of a nonoperational component. This occurs in cases of multiple membership changes that result in a loss of Quorum or in cases of split-brain situations.
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/mysql.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/mysql.conf
     metrics:
       folding:
         title: Metrics

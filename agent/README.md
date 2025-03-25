@@ -1,6 +1,6 @@
 # agent
 
-This library is a tool for writing [netdata](https://github.com/netdata/netdata) plugins.
+This library is a tool for writing [khulnasoft](https://github.com/khulnasoft/khulnasoft) plugins.
 
 We strongly believe that custom plugins are very important, and they must be easy to write.
 
@@ -27,7 +27,7 @@ You are responsible only for __creating modules__.
 
 ## Custom plugin example
 
-[Yep! So easy!](https://github.com/netdata/go.d.plugin/blob/master/examples/simple/main.go)
+[Yep! So easy!](https://github.com/khulnasoft/go.d.plugin/blob/master/examples/simple/main.go)
 
 ## How to write a Module
 
@@ -71,16 +71,16 @@ func (b *Base) SetLogger(l *logger.Logger) { b.Logger = l }
 
 Since plugin is a set of modules all you need is:
  - write module(s)
- - add module(s) to the plugins [registry](https://github.com/netdata/go.d.plugin/blob/master/plugin/module/registry.go)
+ - add module(s) to the plugins [registry](https://github.com/khulnasoft/go.d.plugin/blob/master/plugin/module/registry.go)
  - start the plugin
 
 
-## How to integrate your plugin into Netdata
+## How to integrate your plugin into Khulnasoft
 
 Three simple steps:
  - move the plugin to the `plugins.d` dir.
- - add plugin configuration file to the `etc/netdata/` dir.
- - add modules configuration files to the `etc/netdata/<DIR_NAME>/` dir.
+ - add plugin configuration file to the `etc/khulnasoft/` dir.
+ - add modules configuration files to the `etc/khulnasoft/<DIR_NAME>/` dir.
 
 Congratulations!
 
@@ -147,8 +147,8 @@ Help Options:
 
 Specific module debug:
 ```
-# become user netdata
-sudo su -s /bin/bash netdata
+# become user khulnasoft
+sudo su -s /bin/bash khulnasoft
 
 # run plugin in debug mode
 ./<plugin_name> -d -m <module_name>

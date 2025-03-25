@@ -38,7 +38,7 @@ modules:
       default_behavior:
         auto_detection:
           description: |
-            By default, it detects instances running on localhost by trying to connect as root and netdata using known PostgreSQL TCP and UNIX sockets:
+            By default, it detects instances running on localhost by trying to connect as root and khulnasoft using known PostgreSQL TCP and UNIX sockets:
             
             - 127.0.0.1:5432
             - /var/run/postgresql/
@@ -56,20 +56,20 @@ modules:
     setup:
       prerequisites:
         list:
-          - title: Create netdata user
+          - title: Create khulnasoft user
             description: |
               Create a user with granted `pg_monitor`
               or `pg_read_all_stat` [built-in role](https://www.postgresql.org/docs/current/predefined-roles.html).
               
-              To create the `netdata` user with these permissions, execute the following in the psql session, as a user with CREATEROLE privileges:
+              To create the `khulnasoft` user with these permissions, execute the following in the psql session, as a user with CREATEROLE privileges:
               
               ```postgresql
-              CREATE USER netdata;
-              GRANT pg_monitor TO netdata;
+              CREATE USER khulnasoft;
+              GRANT pg_monitor TO khulnasoft;
               ```
               
-              After creating the new user, restart the Netdata agent with `sudo systemctl restart netdata`, or
-              the [appropriate method](https://github.com/netdata/netdata/blob/master/docs/configure/start-stop-restart.md) for your
+              After creating the new user, restart the Khulnasoft agent with `sudo systemctl restart khulnasoft`, or
+              the [appropriate method](https://github.com/khulnasoft/khulnasoft/blob/master/docs/configure/start-stop-restart.md) for your
               system.
       configuration:
         file:
@@ -98,7 +98,7 @@ modules:
               default_value: 2
               required: false
             - name: collect_databases_matching
-              description: Databases selector. Determines which database metrics will be collected. Syntax is [simple patterns](https://github.com/netdata/go.d.plugin/tree/master/pkg/matcher#simple-patterns-matcher).
+              description: Databases selector. Determines which database metrics will be collected. Syntax is [simple patterns](https://github.com/khulnasoft/go.d.plugin/tree/master/pkg/matcher#simple-patterns-matcher).
               default_value: ""
               required: false
             - name: max_db_tables
@@ -121,13 +121,13 @@ modules:
               config: |
                 jobs:
                   - name: local
-                    dsn: 'postgresql://netdata@127.0.0.1:5432/postgres'
+                    dsn: 'postgresql://khulnasoft@127.0.0.1:5432/postgres'
             - name: Unix socket
               description: An example configuration.
               config: |
                 jobs:
                   - name: local
-                    dsn: 'host=/var/run/postgresql dbname=postgres user=netdata'
+                    dsn: 'host=/var/run/postgresql dbname=postgres user=khulnasoft'
             - name: Multi-instance
               description: |
                 > **Note**: When you define multiple jobs, their names must be unique.
@@ -136,10 +136,10 @@ modules:
               config: |
                 jobs:
                   - name: local
-                    dsn: 'postgresql://netdata@127.0.0.1:5432/postgres'
+                    dsn: 'postgresql://khulnasoft@127.0.0.1:5432/postgres'
                 
                   - name: remote
-                    dsn: 'postgresql://netdata@203.0.113.0:5432/postgres'
+                    dsn: 'postgresql://khulnasoft@203.0.113.0:5432/postgres'
     troubleshooting:
       problems:
         list: []
@@ -147,59 +147,59 @@ modules:
       - name: postgres_total_connection_utilization
         metric: postgres.connections_utilization
         info: average total connection utilization over the last minute
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf
       - name: postgres_acquired_locks_utilization
         metric: postgres.locks_utilization
         info: average acquired locks utilization over the last minute
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf
       - name: postgres_txid_exhaustion_perc
         metric: postgres.txid_exhaustion_perc
         info: percent towards TXID wraparound
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf
       - name: postgres_db_cache_io_ratio
         metric: postgres.db_cache_io_ratio
         info: average cache hit ratio in db ${label:database} over the last minute
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf
       - name: postgres_db_transactions_rollback_ratio
         metric: postgres.db_cache_io_ratio
         info: average aborted transactions percentage in db ${label:database} over the last five minutes
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf
       - name: postgres_db_deadlocks_rate
         metric: postgres.db_deadlocks_rate
         info: number of deadlocks detected in db ${label:database} in the last minute
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf
       - name: postgres_table_cache_io_ratio
         metric: postgres.table_cache_io_ratio
         info: average cache hit ratio in db ${label:database} table ${label:table} over the last minute
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf
       - name: postgres_table_index_cache_io_ratio
         metric: postgres.table_index_cache_io_ratio
         info: average index cache hit ratio in db ${label:database} table ${label:table} over the last minute
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf
       - name: postgres_table_toast_cache_io_ratio
         metric: postgres.table_toast_cache_io_ratio
         info: average TOAST hit ratio in db ${label:database} table ${label:table} over the last minute
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf
       - name: postgres_table_toast_index_cache_io_ratio
         metric: postgres.table_toast_index_cache_io_ratio
         info: average index TOAST hit ratio in db ${label:database} table ${label:table} over the last minute
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf
       - name: postgres_table_bloat_size_perc
         metric: postgres.table_bloat_size_perc
         info: bloat size percentage in db ${label:database} table ${label:table}
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf
       - name: postgres_table_last_autovacuum_time
         metric: postgres.table_autovacuum_since_time
         info: time elapsed since db ${label:database} table ${label:table} was vacuumed by the autovacuum daemon
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf
       - name: postgres_table_last_autoanalyze_time
         metric: postgres.table_autoanalyze_since_time
         info: time elapsed since db ${label:database} table ${label:table} was analyzed by the autovacuum daemon
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf
       - name: postgres_index_bloat_size_perc
         metric: postgres.index_bloat_size_perc
         info: bloat size percentage in db ${label:database} table ${label:table} index ${label:index}
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/postgres.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/postgres.conf
     metrics:
       folding:
         title: Metrics

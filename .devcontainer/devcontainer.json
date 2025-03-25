@@ -1,5 +1,5 @@
 {
-	"image": "netdata/devenv",
+	"image": "khulnasoft/devenv",
 	"forwardPorts": [
 		19999
 	],

@@ -10,12 +10,12 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/netdata/go.d.plugin/logger"
+	"github.com/khulnasoft/go.d.plugin/logger"
 
 	"gopkg.in/yaml.v2"
 )
 
-var Disabled = false // TODO: remove after Netdata v1.39.0. Fix for "from source" stable-channel installations.
+var Disabled = false // TODO: remove after Khulnasoft v1.39.0. Fix for "from source" stable-channel installations.
 
 func New(confDir string) *Vnodes {
 	vn := &Vnodes{

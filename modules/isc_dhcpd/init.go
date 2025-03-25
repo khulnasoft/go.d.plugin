@@ -6,8 +6,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/netdata/go.d.plugin/agent/module"
-	"github.com/netdata/go.d.plugin/pkg/iprange"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/pkg/iprange"
 )
 
 type ipPool struct {

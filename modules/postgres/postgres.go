@@ -8,10 +8,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/netdata/go.d.plugin/agent/module"
-	"github.com/netdata/go.d.plugin/pkg/matcher"
-	"github.com/netdata/go.d.plugin/pkg/metrics"
-	"github.com/netdata/go.d.plugin/pkg/web"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/pkg/matcher"
+	"github.com/khulnasoft/go.d.plugin/pkg/metrics"
+	"github.com/khulnasoft/go.d.plugin/pkg/web"
 
 	"github.com/jackc/pgx/v4/stdlib"
 	_ "github.com/jackc/pgx/v4/stdlib"

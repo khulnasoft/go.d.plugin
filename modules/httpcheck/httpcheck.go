@@ -8,9 +8,9 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/netdata/go.d.plugin/pkg/web"
+	"github.com/khulnasoft/go.d.plugin/pkg/web"
 
-	"github.com/netdata/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
 )
 
 //go:embed "config_schema.json"

@@ -7,15 +7,15 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/netdata/go.d.plugin/agent/discovery/sd/model"
+	"github.com/khulnasoft/go.d.plugin/agent/discovery/sd/model"
 )
 
 var (
 	localListenersOutputSample = []byte(`
-UDP6|::1|8125|/opt/netdata/usr/sbin/netdata -P /run/netdata/netdata.pid -D
-TCP6|::1|8125|/opt/netdata/usr/sbin/netdata -P /run/netdata/netdata.pid -D
-TCP|127.0.0.1|8125|/opt/netdata/usr/sbin/netdata -P /run/netdata/netdata.pid -D
-UDP|127.0.0.1|53768|/opt/netdata/usr/libexec/netdata/plugins.d/go.d.plugin 1
+UDP6|::1|8125|/opt/khulnasoft/usr/sbin/khulnasoft -P /run/khulnasoft/khulnasoft.pid -D
+TCP6|::1|8125|/opt/khulnasoft/usr/sbin/khulnasoft -P /run/khulnasoft/khulnasoft.pid -D
+TCP|127.0.0.1|8125|/opt/khulnasoft/usr/sbin/khulnasoft -P /run/khulnasoft/khulnasoft.pid -D
+UDP|127.0.0.1|53768|/opt/khulnasoft/usr/libexec/khulnasoft/plugins.d/go.d.plugin 1
 `)
 )
 
@@ -32,29 +32,29 @@ func TestNetSocketDiscoverer_Discover(t *testing.T) {
 						Protocol: "UDP6",
 						Address:  "::1",
 						Port:     "8125",
-						Comm:     "netdata",
-						Cmdline:  "/opt/netdata/usr/sbin/netdata -P /run/netdata/netdata.pid -D",
+						Comm:     "khulnasoft",
+						Cmdline:  "/opt/khulnasoft/usr/sbin/khulnasoft -P /run/khulnasoft/khulnasoft.pid -D",
 					}),
 					withHash(&NetSocketTarget{
 						Protocol: "TCP6",
 						Address:  "::1",
 						Port:     "8125",
-						Comm:     "netdata",
-						Cmdline:  "/opt/netdata/usr/sbin/netdata -P /run/netdata/netdata.pid -D",
+						Comm:     "khulnasoft",
+						Cmdline:  "/opt/khulnasoft/usr/sbin/khulnasoft -P /run/khulnasoft/khulnasoft.pid -D",
 					}),
 					withHash(&NetSocketTarget{
 						Protocol: "TCP",
 						Address:  "127.0.0.1",
 						Port:     "8125",
-						Comm:     "netdata",
-						Cmdline:  "/opt/netdata/usr/sbin/netdata -P /run/netdata/netdata.pid -D",
+						Comm:     "khulnasoft",
+						Cmdline:  "/opt/khulnasoft/usr/sbin/khulnasoft -P /run/khulnasoft/khulnasoft.pid -D",
 					}),
 					withHash(&NetSocketTarget{
 						Protocol: "UDP",
 						Address:  "127.0.0.1",
 						Port:     "53768",
 						Comm:     "go.d.plugin",
-						Cmdline:  "/opt/netdata/usr/libexec/netdata/plugins.d/go.d.plugin 1",
+						Cmdline:  "/opt/khulnasoft/usr/libexec/khulnasoft/plugins.d/go.d.plugin 1",
 					}),
 				},
 			}},

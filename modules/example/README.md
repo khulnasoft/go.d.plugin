@@ -1,7 +1,7 @@
 <!--
 title: "Example module"
 description: "Use this example data collection module, which produces example charts with random values, to better understand how to build your own collector in Go."
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/example/README.md"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/example/README.md"
 sidebar_label: "Example module in Go"
 learn_status: "Published"
 learn_topic_type: "References"
@@ -19,15 +19,15 @@ This module produces example charts with random values. Number of charts, dimens
 ## Configuration
 
 Edit the `go.d/example.conf` configuration file using `edit-config` from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/configure/nodes.md), which is typically at `/etc/netdata`.
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/configure/nodes.md), which is typically at `/etc/khulnasoft`.
 
 ```bash
-cd /etc/netdata # Replace this path with your Netdata config directory
+cd /etc/khulnasoft # Replace this path with your Khulnasoft config directory
 sudo ./edit-config go.d/example.conf
 ```
 
 Disabled by default. Should be explicitly enabled
-in [go.d.conf](https://github.com/netdata/go.d.plugin/blob/master/config/go.d.conf).
+in [go.d.conf](https://github.com/khulnasoft/go.d.plugin/blob/master/config/go.d.conf).
 
 ```yaml
 # go.d.conf
@@ -53,24 +53,24 @@ jobs:
 ---
 
 For all available options, see the Example
-collector's [configuration file](https://github.com/netdata/go.d.plugin/blob/master/config/go.d/example.conf).
+collector's [configuration file](https://github.com/khulnasoft/go.d.plugin/blob/master/config/go.d/example.conf).
 
 ## Troubleshooting
 
 To troubleshoot issues with the `example` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

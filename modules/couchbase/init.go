@@ -6,8 +6,8 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/netdata/go.d.plugin/agent/module"
-	"github.com/netdata/go.d.plugin/pkg/web"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/pkg/web"
 )
 
 func (cb *Couchbase) initCharts() (*Charts, error) {

@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/windows/integrations/ms_sql_server.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/windows/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/windows/integrations/ms_sql_server.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/windows/metadata.yaml"
 sidebar_label: "MS SQL Server"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/Windows Systems"
@@ -11,13 +11,13 @@ endmeta-->
 # MS SQL Server
 
 
-<img src="https://netdata.cloud/img/mssql.svg" width="150"/>
+<img src="https://khulnasoft.com/img/mssql.svg" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: windows
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
@@ -36,9 +36,9 @@ This collector supports collecting metrics from multiple instances of this integ
 
 #### Auto-Detection
 
-It detects Windows exporter instances running on localhost (requires using [Netdata MSI installer](https://github.com/netdata/msi-installer#instructions)).
+It detects Windows exporter instances running on localhost (requires using [Khulnasoft MSI installer](https://github.com/khulnasoft/msi-installer#instructions)).
 
-Using the Netdata MSI installer is recommended for testing purposes only. For production use, you need to install Netdata on a Linux host and configure it to collect metrics remotely.
+Using the Khulnasoft MSI installer is recommended for testing purposes only. For production use, you need to install Khulnasoft on a Linux host and configure it to collect metrics remotely.
 
 
 #### Limits
@@ -625,13 +625,13 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ windows_10min_cpu_usage ](https://github.com/netdata/netdata/blob/master/src/health/health.d/windows.conf) | windows.cpu_utilization_total | average CPU utilization over the last 10 minutes |
-| [ windows_ram_in_use ](https://github.com/netdata/netdata/blob/master/src/health/health.d/windows.conf) | windows.memory_utilization | memory utilization |
-| [ windows_inbound_packets_discarded ](https://github.com/netdata/netdata/blob/master/src/health/health.d/windows.conf) | windows.net_nic_discarded | number of inbound discarded packets for the network interface in the last 10 minutes |
-| [ windows_outbound_packets_discarded ](https://github.com/netdata/netdata/blob/master/src/health/health.d/windows.conf) | windows.net_nic_discarded | number of outbound discarded packets for the network interface in the last 10 minutes |
-| [ windows_inbound_packets_errors ](https://github.com/netdata/netdata/blob/master/src/health/health.d/windows.conf) | windows.net_nic_errors | number of inbound errors for the network interface in the last 10 minutes |
-| [ windows_outbound_packets_errors ](https://github.com/netdata/netdata/blob/master/src/health/health.d/windows.conf) | windows.net_nic_errors | number of outbound errors for the network interface in the last 10 minutes |
-| [ windows_disk_in_use ](https://github.com/netdata/netdata/blob/master/src/health/health.d/windows.conf) | windows.logical_disk_space_usage | disk space utilization |
+| [ windows_10min_cpu_usage ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/windows.conf) | windows.cpu_utilization_total | average CPU utilization over the last 10 minutes |
+| [ windows_ram_in_use ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/windows.conf) | windows.memory_utilization | memory utilization |
+| [ windows_inbound_packets_discarded ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/windows.conf) | windows.net_nic_discarded | number of inbound discarded packets for the network interface in the last 10 minutes |
+| [ windows_outbound_packets_discarded ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/windows.conf) | windows.net_nic_discarded | number of outbound discarded packets for the network interface in the last 10 minutes |
+| [ windows_inbound_packets_errors ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/windows.conf) | windows.net_nic_errors | number of inbound errors for the network interface in the last 10 minutes |
+| [ windows_outbound_packets_errors ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/windows.conf) | windows.net_nic_errors | number of outbound errors for the network interface in the last 10 minutes |
+| [ windows_disk_in_use ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/windows.conf) | windows.logical_disk_space_usage | disk space utilization |
 
 
 ## Setup
@@ -652,10 +652,10 @@ The configuration file name for this integration is `go.d/windows.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/windows.conf
 ```
 #### Options
@@ -735,12 +735,12 @@ jobs:
 The Virtual Node functionality allows you to define nodes in configuration files and treat them as ordinary nodes in all interfaces, panels, tabs, filters, etc.
 You can create a virtual node for all your Windows machines and control them as separate entities.
 
-To make your Windows server a virtual node, you need to define virtual nodes in `/etc/netdata/vnodes/vnodes.conf`:
+To make your Windows server a virtual node, you need to define virtual nodes in `/etc/khulnasoft/vnodes/vnodes.conf`:
 
 > **Note**: To create a valid guid, you can use the `uuidgen` command on Linux, or the `[guid]::NewGuid()` command in PowerShell on Windows.
 
 ```yaml
-# /etc/netdata/vnodes/vnodes.conf
+# /etc/khulnasoft/vnodes/vnodes.conf
 - hostname: win_server
   guid: <value>
 ```
@@ -786,17 +786,17 @@ jobs:
 To troubleshoot issues with the `windows` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

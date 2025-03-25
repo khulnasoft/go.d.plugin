@@ -2,7 +2,7 @@
 
 package whoisquery
 
-import "github.com/netdata/go.d.plugin/agent/module"
+import "github.com/khulnasoft/go.d.plugin/agent/module"
 
 var baseCharts = module.Charts{
 	{

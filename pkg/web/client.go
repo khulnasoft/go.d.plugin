@@ -9,7 +9,7 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/netdata/go.d.plugin/pkg/tlscfg"
+	"github.com/khulnasoft/go.d.plugin/pkg/tlscfg"
 )
 
 // ErrRedirectAttempted indicates that a redirect occurred.

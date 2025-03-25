@@ -5,7 +5,7 @@ package metrics
 import (
 	"time"
 
-	"github.com/netdata/go.d.plugin/pkg/stm"
+	"github.com/khulnasoft/go.d.plugin/pkg/stm"
 )
 
 type (

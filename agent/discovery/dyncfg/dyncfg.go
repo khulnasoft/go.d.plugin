@@ -10,10 +10,10 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/netdata/go.d.plugin/agent/confgroup"
-	"github.com/netdata/go.d.plugin/agent/functions"
-	"github.com/netdata/go.d.plugin/agent/module"
-	"github.com/netdata/go.d.plugin/logger"
+	"github.com/khulnasoft/go.d.plugin/agent/confgroup"
+	"github.com/khulnasoft/go.d.plugin/agent/functions"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/logger"
 
 	"gopkg.in/yaml.v2"
 )
@@ -46,7 +46,7 @@ type Discovery struct {
 	*logger.Logger
 
 	Plugin               string
-	API                  NetdataDyncfgAPI
+	API                  KhulnasoftDyncfgAPI
 	Modules              module.Registry
 	ModuleConfigDefaults confgroup.Registry
 

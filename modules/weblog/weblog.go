@@ -5,8 +5,8 @@ package weblog
 import (
 	_ "embed"
 
-	"github.com/netdata/go.d.plugin/agent/module"
-	"github.com/netdata/go.d.plugin/pkg/logs"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/pkg/logs"
 )
 
 //go:embed "config_schema.json"

@@ -44,7 +44,7 @@ func TestLogLine_Assign(t *testing.T) {
 			cases: []subTest{
 				{input: "127.0.0.1", wantLine: logLine{clientAddr: "127.0.0.1"}},
 				{input: "::1", wantLine: logLine{clientAddr: "::1"}},
-				{input: "kadr20.m1.netdata.lan", wantLine: logLine{clientAddr: "kadr20.m1.netdata.lan"}},
+				{input: "kadr20.m1.khulnasoft.lan", wantLine: logLine{clientAddr: "kadr20.m1.khulnasoft.lan"}},
 				{input: "±!@#$%^&*()", wantLine: logLine{clientAddr: "±!@#$%^&*()"}},
 				{input: emptyStr, wantLine: emptyLogLine},
 				{input: hyphen, wantLine: emptyLogLine, wantErr: errBadClientAddr},
@@ -152,7 +152,7 @@ func TestLogLine_Assign(t *testing.T) {
 			cases: []subTest{
 				{input: "127.0.0.1", wantLine: logLine{serverAddr: "127.0.0.1"}},
 				{input: "::1", wantLine: logLine{serverAddr: "::1"}},
-				{input: "kadr20.m1.netdata.lan", wantLine: logLine{serverAddr: "kadr20.m1.netdata.lan"}},
+				{input: "kadr20.m1.khulnasoft.lan", wantLine: logLine{serverAddr: "kadr20.m1.khulnasoft.lan"}},
 				{input: "±!@#$%^&*()", wantLine: logLine{serverAddr: "±!@#$%^&*()"}},
 				{input: emptyStr, wantLine: emptyLogLine},
 				{input: hyphen, wantLine: emptyLogLine},
@@ -259,7 +259,7 @@ func TestLogLine_verify(t *testing.T) {
 			cases: []subTest{
 				{input: "127.0.0.1"},
 				{input: "::1"},
-				{input: "kadr20.m1.netdata.lan"},
+				{input: "kadr20.m1.khulnasoft.lan"},
 				{input: emptyStr},
 				{input: "±!@#$%^&*()", wantErr: errBadClientAddr},
 			},
@@ -355,7 +355,7 @@ func TestLogLine_verify(t *testing.T) {
 			cases: []subTest{
 				{input: "127.0.0.1"},
 				{input: "::1"},
-				{input: "kadr20.m1.netdata.lan"},
+				{input: "kadr20.m1.khulnasoft.lan"},
 				{input: emptyStr},
 				{input: "±!@#$%^&*()", wantErr: errBadServerAddr},
 			},

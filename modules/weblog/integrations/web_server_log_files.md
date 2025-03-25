@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/weblog/README.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/weblog/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/weblog/README.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/weblog/metadata.yaml"
 sidebar_label: "Web server log files"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/Web Servers and Web Proxies"
@@ -11,13 +11,13 @@ endmeta-->
 # Web server log files
 
 
-<img src="https://netdata.cloud/img/webservers.svg" width="150"/>
+<img src="https://khulnasoft.com/img/webservers.svg" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: web_log
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
@@ -140,13 +140,13 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ web_log_1m_unmatched ](https://github.com/netdata/netdata/blob/master/src/health/health.d/web_log.conf) | web_log.excluded_requests | percentage of unparsed log lines over the last minute |
-| [ web_log_1m_requests ](https://github.com/netdata/netdata/blob/master/src/health/health.d/web_log.conf) | web_log.type_requests | ratio of successful HTTP requests over the last minute (1xx, 2xx, 304, 401) |
-| [ web_log_1m_redirects ](https://github.com/netdata/netdata/blob/master/src/health/health.d/web_log.conf) | web_log.type_requests | ratio of redirection HTTP requests over the last minute (3xx except 304) |
-| [ web_log_1m_bad_requests ](https://github.com/netdata/netdata/blob/master/src/health/health.d/web_log.conf) | web_log.type_requests | ratio of client error HTTP requests over the last minute (4xx except 401) |
-| [ web_log_1m_internal_errors ](https://github.com/netdata/netdata/blob/master/src/health/health.d/web_log.conf) | web_log.type_requests | ratio of server error HTTP requests over the last minute (5xx) |
-| [ web_log_web_slow ](https://github.com/netdata/netdata/blob/master/src/health/health.d/web_log.conf) | web_log.request_processing_time | average HTTP response time over the last 1 minute |
-| [ web_log_5m_requests_ratio ](https://github.com/netdata/netdata/blob/master/src/health/health.d/web_log.conf) | web_log.type_requests | ratio of successful HTTP requests over over the last 5 minutes, compared with the previous 5 minutes |
+| [ web_log_1m_unmatched ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/web_log.conf) | web_log.excluded_requests | percentage of unparsed log lines over the last minute |
+| [ web_log_1m_requests ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/web_log.conf) | web_log.type_requests | ratio of successful HTTP requests over the last minute (1xx, 2xx, 304, 401) |
+| [ web_log_1m_redirects ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/web_log.conf) | web_log.type_requests | ratio of redirection HTTP requests over the last minute (3xx except 304) |
+| [ web_log_1m_bad_requests ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/web_log.conf) | web_log.type_requests | ratio of client error HTTP requests over the last minute (4xx except 401) |
+| [ web_log_1m_internal_errors ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/web_log.conf) | web_log.type_requests | ratio of server error HTTP requests over the last minute (5xx) |
+| [ web_log_web_slow ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/web_log.conf) | web_log.request_processing_time | average HTTP response time over the last 1 minute |
+| [ web_log_5m_requests_ratio ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/web_log.conf) | web_log.type_requests | ratio of successful HTTP requests over over the last 5 minutes, compared with the previous 5 minutes |
 
 
 ## Setup
@@ -163,10 +163,10 @@ The configuration file name for this integration is `go.d/web_log.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/web_log.conf
 ```
 #### Options
@@ -216,7 +216,7 @@ Notes:
 | exclude_path | Path to exclude. | *.gz | no |
 | url_patterns | List of URL patterns. | [] | no |
 | url_patterns.name | Used as a dimension name. |  | yes |
-| url_patterns.pattern | Used to match against full original request URI. Pattern syntax in [matcher](https://github.com/netdata/go.d.plugin/tree/master/pkg/matcher#supported-format). |  | yes |
+| url_patterns.pattern | Used to match against full original request URI. Pattern syntax in [matcher](https://github.com/khulnasoft/go.d.plugin/tree/master/pkg/matcher#supported-format). |  | yes |
 | parser | Log parser configuration. |  | no |
 | parser.log_type | Log parser type. | auto | no |
 | parser.csv_config | CSV log parser config. |  | no |
@@ -353,17 +353,17 @@ There are no configuration examples.
 To troubleshoot issues with the `web_log` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

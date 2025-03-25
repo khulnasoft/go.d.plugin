@@ -54,13 +54,13 @@ dev-up:
 
 .PHONY: dev-exec
 dev-exec: ## Get into development environment
-	docker-compose exec netdata bash
+	docker-compose exec khulnasoft bash
 
 dev-log:
-	docker-compose logs -f netdata
+	docker-compose logs -f khulnasoft
 
 dev-run: ## Run go.d.plugin inside development environment
-	go run github.com/netdata/go.d.plugin/cmd/godplugin -d -c conf.d
+	go run github.com/khulnasoft/go.d.plugin/cmd/godplugin -d -c conf.d
 
 dev-mock: ## Run go.d.plugin inside development environment with mock config
-	go run github.com/netdata/go.d.plugin/cmd/godplugin -d -c ./mocks/conf.d -m $(DEV_MODULES)
+	go run github.com/khulnasoft/go.d.plugin/cmd/godplugin -d -c ./mocks/conf.d -m $(DEV_MODULES)

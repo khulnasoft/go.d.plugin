@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/netdata/go.d.plugin/agent/module"
-	"github.com/netdata/go.d.plugin/pkg/matcher"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/pkg/matcher"
 )
 
 //go:embed "config_schema.json"

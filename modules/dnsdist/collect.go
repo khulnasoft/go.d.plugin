@@ -9,8 +9,8 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/netdata/go.d.plugin/pkg/stm"
-	"github.com/netdata/go.d.plugin/pkg/web"
+	"github.com/khulnasoft/go.d.plugin/pkg/stm"
+	"github.com/khulnasoft/go.d.plugin/pkg/web"
 )
 
 const (

@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/netdata/go.d.plugin/agent/confgroup"
+	"github.com/khulnasoft/go.d.plugin/agent/confgroup"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -80,7 +80,7 @@ func TestManager_Run(t *testing.T) {
 
 	for name, test := range tests {
 		t.Run(name, func(t *testing.T) {
-			dir, err := os.MkdirTemp(os.TempDir(), "netdata-go-test-filestatus-run")
+			dir, err := os.MkdirTemp(os.TempDir(), "khulnasoft-go-test-filestatus-run")
 			require.NoError(t, err)
 			defer func() { assert.NoError(t, os.RemoveAll(dir)) }()
 

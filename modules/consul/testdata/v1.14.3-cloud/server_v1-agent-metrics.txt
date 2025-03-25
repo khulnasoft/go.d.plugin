@@ -288,7 +288,7 @@ consul_catalog_service_query{service="consul-connect-injector-consul"} 15004
 consul_catalog_service_query{service="consul-ingress-gateway-consul"} 15009
 consul_catalog_service_query{service="kubelet-default"} 15009
 consul_catalog_service_query{service="kubernetes-default"} 15016
-consul_catalog_service_query{service="netdata-default"} 15009
+consul_catalog_service_query{service="khulnasoft-default"} 15009
 # HELP consul_catalog_service_query_tag Increments for each catalog query for the given service with the given tag.
 # TYPE consul_catalog_service_query_tag counter
 consul_catalog_service_query_tag 0
@@ -299,7 +299,7 @@ consul_catalog_service_query_tags{service="consul-connect-injector-consul",tag="
 consul_catalog_service_query_tags{service="consul-ingress-gateway-consul",tag="k8s"} 15009
 consul_catalog_service_query_tags{service="kubelet-default",tag="k8s"} 15009
 consul_catalog_service_query_tags{service="kubernetes-default",tag="k8s"} 15014
-consul_catalog_service_query_tags{service="netdata-default",tag="k8s"} 15004
+consul_catalog_service_query_tags{service="khulnasoft-default",tag="k8s"} 15004
 # HELP consul_client_api_catalog_datacenters Increments whenever a Consul agent receives a request to list datacenters in the catalog.
 # TYPE consul_client_api_catalog_datacenters counter
 consul_client_api_catalog_datacenters 0

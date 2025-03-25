@@ -7,7 +7,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/netdata/go.d.plugin/agent/confgroup"
+	"github.com/khulnasoft/go.d.plugin/agent/confgroup"
 
 	"gopkg.in/yaml.v2"
 )

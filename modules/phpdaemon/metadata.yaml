@@ -50,7 +50,7 @@ modules:
               Instruction from [@METAJIJI](https://github.com/METAJIJI).
               
               To enable `phpd` statistics on http, you must enable the http server and write an application.
-              Application is important, because standalone application [ServerStatus.php](https://github.com/kakserpom/phpdaemon/blob/master/PHPDaemon/Applications/ServerStatus.php) provides statistics in html format and unusable for `netdata`.
+              Application is important, because standalone application [ServerStatus.php](https://github.com/kakserpom/phpdaemon/blob/master/PHPDaemon/Applications/ServerStatus.php) provides statistics in html format and unusable for `khulnasoft`.
               
               ```php
               // /opt/phpdaemon/conf/phpd.conf

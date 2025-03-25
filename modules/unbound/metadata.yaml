@@ -47,7 +47,7 @@ modules:
             description: |
               If using unix socket:
               
-              - socket should be readable and writeable by `netdata` user
+              - socket should be readable and writeable by `khulnasoft` user
               
               If using ip socket and TLS is disabled:
               
@@ -55,13 +55,13 @@ modules:
               
               If TLS is enabled, in addition:
               
-              - `control-key-file` should be readable by `netdata` user
-              - `control-cert-file` should be readable by `netdata` user
+              - `control-key-file` should be readable by `khulnasoft` user
+              - `control-cert-file` should be readable by `khulnasoft` user
               
               For auto-detection parameters from `unbound.conf`:
               
-              - `unbound.conf` should be readable by `netdata` user
-              - if you have several configuration files (include feature) all of them should be readable by `netdata` user
+              - `unbound.conf` should be readable by `khulnasoft` user
+              - if you have several configuration files (include feature) all of them should be readable by `khulnasoft` user
       configuration:
         file:
           name: go.d/unbound.conf

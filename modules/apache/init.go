@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/netdata/go.d.plugin/pkg/web"
+	"github.com/khulnasoft/go.d.plugin/pkg/web"
 )
 
 func (a Apache) verifyConfig() error {

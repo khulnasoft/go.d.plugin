@@ -76,7 +76,7 @@ password=password
 			wantErr: true,
 		},
 	}
-	pattern := "netdata-godplugin-mysql-dsnFromFile-*"
+	pattern := "khulnasoft-godplugin-mysql-dsnFromFile-*"
 	dir, err := os.MkdirTemp(os.TempDir(), pattern)
 	require.NoError(t, err)
 	defer func() { _ = os.RemoveAll(dir) }()

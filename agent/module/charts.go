@@ -39,7 +39,7 @@ const (
 
 const (
 	// Not documented.
-	// https://github.com/netdata/netdata/blob/cc2586de697702f86a3c34e60e23652dd4ddcb42/database/rrd.h#L204
+	// https://github.com/khulnasoft/khulnasoft/blob/cc2586de697702f86a3c34e60e23652dd4ddcb42/database/rrd.h#L204
 
 	LabelSourceAuto = 1 << 0
 	LabelSourceConf = 1 << 1
@@ -75,7 +75,7 @@ type (
 	}
 
 	// Chart represents a chart.
-	// For the full description please visit https://docs.netdata.cloud/collectors/plugins.d/#chart
+	// For the full description please visit https://docs.khulnasoft.com/collectors/plugins.d/#chart
 	Chart struct {
 		// typeID is the unique identification of the chart, if not specified,
 		// the orchestrator will use job full name + chart ID as typeID (default behaviour).
@@ -106,7 +106,7 @@ type (
 		// updated flag is used to indicate whether the chart was updated on last data collection interval.
 		updated bool
 
-		// ignore flag is used to indicate that the chart shouldn't be sent to the netdata plugins.d
+		// ignore flag is used to indicate that the chart shouldn't be sent to the khulnasoft plugins.d
 		ignore bool
 	}
 
@@ -125,7 +125,7 @@ type (
 	}
 
 	// Dim represents a chart dimension.
-	// For detailed description please visit https://docs.netdata.cloud/collectors/plugins.d/#dimension.
+	// For detailed description please visit https://docs.khulnasoft.com/collectors/plugins.d/#dimension.
 	Dim struct {
 		ID   string
 		Name string
@@ -138,7 +138,7 @@ type (
 	}
 
 	// Var represents a chart variable.
-	// For detailed description please visit https://docs.netdata.cloud/collectors/plugins.d/#variable
+	// For detailed description please visit https://docs.khulnasoft.com/collectors/plugins.d/#variable
 	Var struct {
 		ID    string
 		Name  string

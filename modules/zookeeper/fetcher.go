@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"unsafe"
 
-	"github.com/netdata/go.d.plugin/pkg/socket"
+	"github.com/khulnasoft/go.d.plugin/pkg/socket"
 )
 
 const limitReadLines = 2000

@@ -8,7 +8,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/netdata/go.d.plugin/pkg/logs"
+	"github.com/khulnasoft/go.d.plugin/pkg/logs"
 )
 
 /*
@@ -23,7 +23,7 @@ Default nginx log format:
    '"$request" $status $body_bytes_sent '
    '"$http_referer" "$http_user_agent"' combined
 
-Netdata recommends:
+Khulnasoft recommends:
  Nginx:
   - '$remote_addr - $remote_user [$time_local] '
     '"$request" $status $body_bytes_sent '

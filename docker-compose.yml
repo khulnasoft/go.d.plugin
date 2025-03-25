@@ -1,6 +1,6 @@
 version: '3'
 services:
-  netdata:
+  khulnasoft:
     build:
       context: .
       dockerfile: Dockerfile.dev

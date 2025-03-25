@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/nvme/README.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/nvme/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/nvme/README.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/nvme/metadata.yaml"
 sidebar_label: "NVMe devices"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/Storage, Mount Points and Filesystems"
@@ -11,17 +11,17 @@ endmeta-->
 # NVMe devices
 
 
-<img src="https://netdata.cloud/img/nvme.svg" width="150"/>
+<img src="https://khulnasoft.com/img/nvme.svg" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: nvme
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
-This collector monitors the health of NVMe devices using the command line tool [nvme](https://github.com/linux-nvme/nvme-cli#nvme-cli), which can only be run by the root user. It uses `sudo` and assumes it is set up so that the netdata user can execute `nvme` as root without a password.
+This collector monitors the health of NVMe devices using the command line tool [nvme](https://github.com/linux-nvme/nvme-cli#nvme-cli), which can only be run by the root user. It uses `sudo` and assumes it is set up so that the khulnasoft user can execute `nvme` as root without a password.
 
 
 
@@ -94,7 +94,7 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ nvme_device_critical_warnings_state ](https://github.com/netdata/netdata/blob/master/src/health/health.d/nvme.conf) | nvme.device_critical_warnings_state | NVMe device ${label:device} has critical warnings |
+| [ nvme_device_critical_warnings_state ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/nvme.conf) | nvme.device_critical_warnings_state | NVMe device ${label:device} has critical warnings |
 
 
 ## Setup
@@ -106,12 +106,12 @@ The following alerts are available:
 See [Distro Support](https://github.com/linux-nvme/nvme-cli#distro-support). Install `nvme-cli` using your distribution's package manager.
 
 
-#### Allow netdata to execute nvme
+#### Allow khulnasoft to execute nvme
 
-Add the netdata user to `/etc/sudoers` (use `which nvme` to find the full path to the binary):
+Add the khulnasoft user to `/etc/sudoers` (use `which nvme` to find the full path to the binary):
 
 ```bash
-netdata ALL=(root) NOPASSWD: /usr/sbin/nvme
+khulnasoft ALL=(root) NOPASSWD: /usr/sbin/nvme
 ```
 
 
@@ -124,10 +124,10 @@ The configuration file name for this integration is `go.d/nvme.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/nvme.conf
 ```
 #### Options
@@ -171,17 +171,17 @@ jobs:
 To troubleshoot issues with the `nvme` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

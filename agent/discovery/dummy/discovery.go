@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"log/slog"
 
-	"github.com/netdata/go.d.plugin/agent/confgroup"
-	"github.com/netdata/go.d.plugin/logger"
+	"github.com/khulnasoft/go.d.plugin/agent/confgroup"
+	"github.com/khulnasoft/go.d.plugin/logger"
 )
 
 func NewDiscovery(cfg Config) (*Discovery, error) {

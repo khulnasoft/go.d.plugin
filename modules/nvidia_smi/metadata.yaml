@@ -26,7 +26,7 @@ modules:
           This collector monitors GPUs performance metrics using
           the [nvidia-smi](https://developer.nvidia.com/nvidia-system-management-interface) CLI tool.
           
-          > **Warning**: under development, [loop mode](https://github.com/netdata/netdata/issues/14522) not implemented yet.
+          > **Warning**: under development, [loop mode](https://github.com/khulnasoft/khulnasoft/issues/14522) not implemented yet.
         method_description: ""
       supported_platforms:
         include: []

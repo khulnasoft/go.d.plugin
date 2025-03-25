@@ -7,10 +7,10 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/netdata/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
 )
 
-// NETDATA_CHART_PRIO_CGROUPS_CONTAINERS 40000
+// KHULNASOFT_CHART_PRIO_CGROUPS_CONTAINERS 40000
 const prioDiscoveryDiscovererState = 50999
 
 const (

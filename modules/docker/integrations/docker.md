@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/docker/README.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/docker/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/docker/README.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/docker/metadata.yaml"
 sidebar_label: "Docker"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/Containers and VMs"
@@ -11,13 +11,13 @@ endmeta-->
 # Docker
 
 
-<img src="https://netdata.cloud/img/docker.svg" width="150"/>
+<img src="https://khulnasoft.com/img/docker.svg" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: docker
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
@@ -35,7 +35,7 @@ This collector is supported on all platforms.
 
 This collector supports collecting metrics from multiple instances of this integration, including remote instances.
 
-Requires netdata user to be in the docker group.
+Requires khulnasoft user to be in the docker group.
 
 ### Default Behavior
 
@@ -105,7 +105,7 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ docker_container_unhealthy ](https://github.com/netdata/netdata/blob/master/src/health/health.d/docker.conf) | docker.container_health_status | ${label:container_name} docker container health status is unhealthy |
+| [ docker_container_unhealthy ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/docker.conf) | docker.container_health_status | ${label:container_name} docker container health status is unhealthy |
 
 
 ## Setup
@@ -122,10 +122,10 @@ The configuration file name for this integration is `go.d/docker.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/docker.conf
 ```
 #### Options
@@ -186,17 +186,17 @@ jobs:
 To troubleshoot issues with the `docker` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

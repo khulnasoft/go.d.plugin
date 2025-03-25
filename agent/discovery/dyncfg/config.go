@@ -3,20 +3,20 @@
 package dyncfg
 
 import (
-	"github.com/netdata/go.d.plugin/agent/confgroup"
-	"github.com/netdata/go.d.plugin/agent/functions"
-	"github.com/netdata/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/agent/confgroup"
+	"github.com/khulnasoft/go.d.plugin/agent/functions"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
 )
 
 type Config struct {
 	Plugin               string
-	API                  NetdataDyncfgAPI
+	API                  KhulnasoftDyncfgAPI
 	Functions            FunctionRegistry
 	Modules              module.Registry
 	ModuleConfigDefaults confgroup.Registry
 }
 
-type NetdataDyncfgAPI interface {
+type KhulnasoftDyncfgAPI interface {
 	DynCfgEnable(string) error
 	DynCfgReset() error
 	DyncCfgRegisterModule(string) error

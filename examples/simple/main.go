@@ -9,11 +9,11 @@ import (
 	"os"
 	"path"
 
-	"github.com/netdata/go.d.plugin/agent"
-	"github.com/netdata/go.d.plugin/agent/module"
-	"github.com/netdata/go.d.plugin/cli"
-	"github.com/netdata/go.d.plugin/logger"
-	"github.com/netdata/go.d.plugin/pkg/multipath"
+	"github.com/khulnasoft/go.d.plugin/agent"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/cli"
+	"github.com/khulnasoft/go.d.plugin/logger"
+	"github.com/khulnasoft/go.d.plugin/pkg/multipath"
 
 	"github.com/jessevdk/go-flags"
 )
@@ -51,8 +51,8 @@ func (e *example) Collect() map[string]int64 {
 var (
 	cd, _    = os.Getwd()
 	name     = "goplugin"
-	userDir  = os.Getenv("NETDATA_USER_CONFIG_DIR")
-	stockDir = os.Getenv("NETDATA_STOCK_CONFIG_DIR")
+	userDir  = os.Getenv("KHULNASOFT_USER_CONFIG_DIR")
+	stockDir = os.Getenv("KHULNASOFT_STOCK_CONFIG_DIR")
 )
 
 func confDir(dirs []string) (mpath multipath.MultiPath) {
@@ -66,8 +66,8 @@ func confDir(dirs []string) (mpath multipath.MultiPath) {
 		)
 	}
 	return multipath.New(
-		path.Join(cd, "/../../../../etc/netdata"),
-		path.Join(cd, "/../../../../usr/lib/netdata/conf.d"),
+		path.Join(cd, "/../../../../etc/khulnasoft"),
+		path.Join(cd, "/../../../../usr/lib/khulnasoft/conf.d"),
 	)
 }
 
@@ -82,8 +82,8 @@ func modulesConfDir(dirs []string) multipath.MultiPath {
 		)
 	}
 	return multipath.New(
-		path.Join(cd, "/../../../../etc/netdata", name),
-		path.Join(cd, "/../../../../usr/lib/netdata/conf.d", name),
+		path.Join(cd, "/../../../../etc/khulnasoft", name),
+		path.Join(cd, "/../../../../usr/lib/khulnasoft/conf.d", name),
 	)
 }
 

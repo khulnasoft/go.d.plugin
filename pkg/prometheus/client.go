@@ -13,8 +13,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/netdata/go.d.plugin/pkg/prometheus/selector"
-	"github.com/netdata/go.d.plugin/pkg/web"
+	"github.com/khulnasoft/go.d.plugin/pkg/prometheus/selector"
+	"github.com/khulnasoft/go.d.plugin/pkg/web"
 )
 
 type (
@@ -43,7 +43,7 @@ type (
 
 const (
 	acceptHeader    = `text/plain;version=0.0.4;q=1,*/*;q=0.1`
-	userAgentHeader = `netdata/go.d.plugin`
+	userAgentHeader = `khulnasoft/go.d.plugin`
 )
 
 // New creates a Prometheus instance.

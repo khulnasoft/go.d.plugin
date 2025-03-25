@@ -14,9 +14,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/netdata/go.d.plugin/agent/netdataapi"
-	"github.com/netdata/go.d.plugin/agent/vnodes"
-	"github.com/netdata/go.d.plugin/logger"
+	"github.com/khulnasoft/go.d.plugin/agent/khulnasoftapi"
+	"github.com/khulnasoft/go.d.plugin/agent/vnodes"
+	"github.com/khulnasoft/go.d.plugin/logger"
 )
 
 var obsoleteLock = &sync.Mutex{}
@@ -36,21 +36,21 @@ func shouldObsoleteCharts() bool {
 
 var reSpace = regexp.MustCompile(`\s+`)
 
-var ndInternalMonitoringDisabled = os.Getenv("NETDATA_INTERNALS_MONITORING") == "NO"
+var ndInternalMonitoringDisabled = os.Getenv("KHULNASOFT_INTERNALS_MONITORING") == "NO"
 
 func newRuntimeChart(pluginName string) *Chart {
-	// this is needed to keep the same name as we had before https://github.com/netdata/go.d.plugin/issues/650
+	// this is needed to keep the same name as we had before https://github.com/khulnasoft/go.d.plugin/issues/650
 	ctxName := pluginName
 	if ctxName == "go.d" {
 		ctxName = "go"
 	}
 	ctxName = reSpace.ReplaceAllString(ctxName, "_")
 	return &Chart{
-		typ:      "netdata",
+		typ:      "khulnasoft",
 		Title:    "Execution time",
 		Units:    "ms",
 		Fam:      pluginName,
-		Ctx:      fmt.Sprintf("netdata.%s_plugin_execution_time", ctxName),
+		Ctx:      fmt.Sprintf("khulnasoft.%s_plugin_execution_time", ctxName),
 		Priority: 145000,
 		Dims: Dims{
 			{ID: "time"},
@@ -103,7 +103,7 @@ func NewJob(cfg JobConfig) *Job {
 		stop:        make(chan struct{}),
 		tick:        make(chan int),
 		buf:         &buf,
-		api:         netdataapi.New(&buf),
+		api:         khulnasoftapi.New(&buf),
 
 		vnodeGUID:     cfg.VnodeGUID,
 		vnodeHostname: cfg.VnodeHostname,
@@ -150,7 +150,7 @@ type Job struct {
 	tick     chan int
 	out      io.Writer
 	buf      *bytes.Buffer
-	api      *netdataapi.API
+	api      *khulnasoftapi.API
 
 	retries int
 	prevRun time.Time
@@ -163,8 +163,8 @@ type Job struct {
 	vnodeLabels   map[string]string
 }
 
-// NetdataChartIDMaxLength is the chart ID max length. See RRD_ID_LENGTH_MAX in the netdata source code.
-const NetdataChartIDMaxLength = 1200
+// KhulnasoftChartIDMaxLength is the chart ID max length. See RRD_ID_LENGTH_MAX in the khulnasoft source code.
+const KhulnasoftChartIDMaxLength = 1200
 
 // FullName returns job full name.
 func (j Job) FullName() string {
@@ -402,9 +402,9 @@ func (j *Job) processMetrics(metrics map[string]int64, startTime time.Time, sinc
 	for _, chart := range *j.charts {
 		if !chart.created {
 			typeID := fmt.Sprintf("%s.%s", j.FullName(), chart.ID)
-			if len(typeID) >= NetdataChartIDMaxLength {
+			if len(typeID) >= KhulnasoftChartIDMaxLength {
 				j.Warningf("chart 'type.id' length (%d) >= max allowed (%d), the chart is ignored (%s)",
-					len(typeID), NetdataChartIDMaxLength, typeID)
+					len(typeID), KhulnasoftChartIDMaxLength, typeID)
 				chart.ignore = true
 			}
 			j.createChart(chart)
@@ -470,7 +470,7 @@ func (j *Job) createChart(chart *Chart) {
 			seen[l.Key] = true
 			ls := l.Source
 			// the default should be auto
-			// https://github.com/netdata/netdata/blob/cc2586de697702f86a3c34e60e23652dd4ddcb42/database/rrd.h#L205
+			// https://github.com/khulnasoft/khulnasoft/blob/cc2586de697702f86a3c34e60e23652dd4ddcb42/database/rrd.h#L205
 			if ls == 0 {
 				ls = LabelSourceAuto
 			}

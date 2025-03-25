@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/cockroachdb/README.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/cockroachdb/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/cockroachdb/README.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/cockroachdb/metadata.yaml"
 sidebar_label: "CockroachDB"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/Databases"
@@ -11,13 +11,13 @@ endmeta-->
 # CockroachDB
 
 
-<img src="https://netdata.cloud/img/cockroachdb.svg" width="150"/>
+<img src="https://khulnasoft.com/img/cockroachdb.svg" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: cockroachdb
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
@@ -134,11 +134,11 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ cockroachdb_used_storage_capacity ](https://github.com/netdata/netdata/blob/master/src/health/health.d/cockroachdb.conf) | cockroachdb.storage_used_capacity_percentage | storage capacity utilization |
-| [ cockroachdb_used_usable_storage_capacity ](https://github.com/netdata/netdata/blob/master/src/health/health.d/cockroachdb.conf) | cockroachdb.storage_used_capacity_percentage | storage usable space utilization |
-| [ cockroachdb_unavailable_ranges ](https://github.com/netdata/netdata/blob/master/src/health/health.d/cockroachdb.conf) | cockroachdb.ranges_replication_problem | number of ranges with fewer live replicas than needed for quorum |
-| [ cockroachdb_underreplicated_ranges ](https://github.com/netdata/netdata/blob/master/src/health/health.d/cockroachdb.conf) | cockroachdb.ranges_replication_problem | number of ranges with fewer live replicas than the replication target |
-| [ cockroachdb_open_file_descriptors_limit ](https://github.com/netdata/netdata/blob/master/src/health/health.d/cockroachdb.conf) | cockroachdb.process_file_descriptors | open file descriptors utilization (against softlimit) |
+| [ cockroachdb_used_storage_capacity ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/cockroachdb.conf) | cockroachdb.storage_used_capacity_percentage | storage capacity utilization |
+| [ cockroachdb_used_usable_storage_capacity ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/cockroachdb.conf) | cockroachdb.storage_used_capacity_percentage | storage usable space utilization |
+| [ cockroachdb_unavailable_ranges ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/cockroachdb.conf) | cockroachdb.ranges_replication_problem | number of ranges with fewer live replicas than needed for quorum |
+| [ cockroachdb_underreplicated_ranges ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/cockroachdb.conf) | cockroachdb.ranges_replication_problem | number of ranges with fewer live replicas than the replication target |
+| [ cockroachdb_open_file_descriptors_limit ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/cockroachdb.conf) | cockroachdb.process_file_descriptors | open file descriptors utilization (against softlimit) |
 
 
 ## Setup
@@ -155,10 +155,10 @@ The configuration file name for this integration is `go.d/cockroachdb.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/cockroachdb.conf
 ```
 #### Options
@@ -266,17 +266,17 @@ jobs:
 To troubleshoot issues with the `cockroachdb` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

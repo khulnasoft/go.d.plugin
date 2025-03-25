@@ -6,9 +6,9 @@ import (
 	"context"
 	"sync"
 
-	"github.com/netdata/go.d.plugin/agent/confgroup"
-	"github.com/netdata/go.d.plugin/agent/discovery/sd/pipeline"
-	"github.com/netdata/go.d.plugin/logger"
+	"github.com/khulnasoft/go.d.plugin/agent/confgroup"
+	"github.com/khulnasoft/go.d.plugin/agent/discovery/sd/pipeline"
+	"github.com/khulnasoft/go.d.plugin/logger"
 
 	"gopkg.in/yaml.v2"
 )

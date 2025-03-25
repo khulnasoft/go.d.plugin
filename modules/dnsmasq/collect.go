@@ -105,7 +105,7 @@ func (d *Dnsmasq) queryCacheStatistics() (*dns.Msg, error) {
 			{Name: "misses.bind.", Qtype: dns.TypeTXT, Qclass: dns.ClassCHAOS},
 			// TODO: collect auth.bind if available
 			// auth.bind query is only supported if dnsmasq has been built
-			// to support running as an authoritative name server. See https://github.com/netdata/netdata/issues/13766
+			// to support running as an authoritative name server. See https://github.com/khulnasoft/khulnasoft/issues/13766
 			//{Name: "auth.bind.", Qtype: dns.TypeTXT, Qclass: dns.ClassCHAOS},
 			{Name: "servers.bind.", Qtype: dns.TypeTXT, Qclass: dns.ClassCHAOS},
 		},

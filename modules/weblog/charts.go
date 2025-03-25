@@ -6,7 +6,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/netdata/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
 )
 
 type (
@@ -57,7 +57,7 @@ const (
 )
 
 // NOTE: inconsistency with python web_log
-// TODO: current histogram charts are misleading in netdata
+// TODO: current histogram charts are misleading in khulnasoft
 
 // Requests
 var (
@@ -84,7 +84,7 @@ var (
 			{ID: "req_unmatched", Name: "unmatched", Algo: module.Incremental},
 		},
 	}
-	// netdata specific grouping
+	// khulnasoft specific grouping
 	reqTypes = Chart{
 		ID:       "requests_by_type",
 		Title:    "Requests By Type",

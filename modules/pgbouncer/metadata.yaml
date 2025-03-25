@@ -49,28 +49,28 @@ modules:
     setup:
       prerequisites:
         list:
-          - title: Create netdata user
+          - title: Create khulnasoft user
             description: |
               Create a user with `stats_users` permissions to query your PgBouncer instance.
               
-              To create the `netdata` user:
+              To create the `khulnasoft` user:
               
-              - Add `netdata` user to the `pgbouncer.ini` file:
+              - Add `khulnasoft` user to the `pgbouncer.ini` file:
               
                 ```text
-                stats_users = netdata
+                stats_users = khulnasoft
                 ```
               
-              - Add a password for the `netdata` user to the `userlist.txt` file:
+              - Add a password for the `khulnasoft` user to the `userlist.txt` file:
               
                 ```text
-                "netdata" "<PASSWORD>"
+                "khulnasoft" "<PASSWORD>"
                 ```
               
               - To verify the credentials, run the following command
               
                 ```bash
-                psql -h localhost -U netdata -p 6432 pgbouncer -c "SHOW VERSION;" >/dev/null 2>&1 && echo OK || echo FAIL
+                psql -h localhost -U khulnasoft -p 6432 pgbouncer -c "SHOW VERSION;" >/dev/null 2>&1 && echo OK || echo FAIL
                 ```
               
                 When it prompts for a password, enter the password you added to `userlist.txt`.

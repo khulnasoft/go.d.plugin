@@ -29,7 +29,7 @@ const (
 	// FmtRegExp is a regex match format.
 	FmtRegExp Format = "regexp"
 	// FmtSimplePattern is a simple pattern match format
-	// https://docs.netdata.cloud/libnetdata/simple_pattern/
+	// https://docs.khulnasoft.com/libkhulnasoft/simple_pattern/
 	FmtSimplePattern Format = "simple_patterns"
 
 	// Separator is a separator between match format and expression.

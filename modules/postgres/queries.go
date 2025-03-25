@@ -28,7 +28,7 @@ SELECT current_setting('max_locks_per_transaction')::INT *
 // TODO: this is not correct and we should use pg_stat_activity.
 // But we need to check what connections (backend_type) count towards 'max_connections'.
 // I think python version query doesn't count it correctly.
-// https://github.com/netdata/netdata/blob/1782e2d002bc5203128e5a5d2b801010e2822d2d/collectors/python.d.plugin/postgres/postgres.chart.py#L266
+// https://github.com/khulnasoft/khulnasoft/blob/1782e2d002bc5203128e5a5d2b801010e2822d2d/collectors/python.d.plugin/postgres/postgres.chart.py#L266
 func queryServerCurrentConnectionsUsed() string {
 	return "SELECT sum(numbackends) FROM pg_stat_database;"
 }
@@ -211,7 +211,7 @@ func queryWALArchiveFiles(version int) string {
 
 func queryCatalogRelations() string {
 	// kind of same as
-	// https://github.com/netdata/netdata/blob/750810e1798e09cc6210e83594eb9ed4905f8f12/collectors/python.d.plugin/postgres/postgres.chart.py#L336-L354
+	// https://github.com/khulnasoft/khulnasoft/blob/750810e1798e09cc6210e83594eb9ed4905f8f12/collectors/python.d.plugin/postgres/postgres.chart.py#L336-L354
 	// TODO: do we need that? It is optional and disabled by default in py version.
 	return `
 SELECT relkind,

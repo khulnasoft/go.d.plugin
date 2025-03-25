@@ -6,10 +6,10 @@ import (
 	_ "embed"
 	"time"
 
-	"github.com/netdata/go.d.plugin/pkg/prometheus"
-	"github.com/netdata/go.d.plugin/pkg/web"
+	"github.com/khulnasoft/go.d.plugin/pkg/prometheus"
+	"github.com/khulnasoft/go.d.plugin/pkg/web"
 
-	"github.com/netdata/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
 )
 
 const (
@@ -24,7 +24,7 @@ func init() {
 	module.Register("k8s_kubeproxy", module.Creator{
 		JobConfigSchema: configSchema,
 		Defaults: module.Defaults{
-			// NETDATA_CHART_PRIO_CGROUPS_CONTAINERS        40000
+			// KHULNASOFT_CHART_PRIO_CGROUPS_CONTAINERS        40000
 			Priority: 50000,
 		},
 		Create: func() module.Module { return New() },

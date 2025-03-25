@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/netdata/go.d.plugin/agent/confgroup"
+	"github.com/khulnasoft/go.d.plugin/agent/confgroup"
 
 	"gopkg.in/yaml.v2"
 )
@@ -69,7 +69,7 @@ func (d *Discovery) getConfigBytes(key string) ([]byte, error) {
 	return bs, nil
 }
 
-var envNDStockConfigDir = os.Getenv("NETDATA_STOCK_CONFIG_DIR")
+var envNDStockConfigDir = os.Getenv("KHULNASOFT_STOCK_CONFIG_DIR")
 
 func isStock(cfg confgroup.Config) bool {
 	if envNDStockConfigDir == "" {

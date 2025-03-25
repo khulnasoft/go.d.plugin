@@ -5,7 +5,7 @@ package dockerhub
 import (
 	"strings"
 
-	"github.com/netdata/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
 )
 
 type (

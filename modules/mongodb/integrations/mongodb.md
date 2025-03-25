@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/mongodb/README.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/mongodb/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/mongodb/README.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/mongodb/metadata.yaml"
 sidebar_label: "MongoDB"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/Databases"
@@ -11,13 +11,13 @@ endmeta-->
 # MongoDB
 
 
-<img src="https://netdata.cloud/img/mongodb.svg" width="150"/>
+<img src="https://khulnasoft.com/img/mongodb.svg" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: mongodb
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
@@ -216,7 +216,7 @@ There are no alerts configured by default for this integration.
 
 #### Create a read-only user
 
-Create a read-only user for Netdata in the admin database.
+Create a read-only user for Khulnasoft in the admin database.
 
 - Authenticate as the admin user:
 
@@ -229,7 +229,7 @@ Create a read-only user for Netdata in the admin database.
 
   ```bash
   db.createUser({
-    "user":"netdata",
+    "user":"khulnasoft",
     "pwd": "<UNIQUE_PASSWORD>",
     "roles" : [
       {role: 'read', db: 'admin' },
@@ -249,10 +249,10 @@ The configuration file name for this integration is `go.d/mongodb.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/mongodb.conf
 ```
 #### Options
@@ -283,7 +283,7 @@ An example configuration.
 ```yaml
 jobs:
   - name: local
-    uri: mongodb://netdata:password@localhost:27017
+    uri: mongodb://khulnasoft:password@localhost:27017
 
 ```
 </details>
@@ -297,7 +297,7 @@ An example configuration.
 ```yaml
 jobs:
   - name: local
-    uri: mongodb://netdata:password@localhost:27017
+    uri: mongodb://khulnasoft:password@localhost:27017
     databases:
       includes:
         - "* *"
@@ -317,10 +317,10 @@ Local and remote instances.
 ```yaml
 jobs:
   - name: local
-    uri: mongodb://netdata:password@localhost:27017
+    uri: mongodb://khulnasoft:password@localhost:27017
 
   - name: remote
-    uri: mongodb://netdata:password@203.0.113.0:27017
+    uri: mongodb://khulnasoft:password@203.0.113.0:27017
 
 ```
 </details>
@@ -334,17 +334,17 @@ jobs:
 To troubleshoot issues with the `mongodb` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

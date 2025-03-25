@@ -8,7 +8,7 @@ package systemdunits
 import (
 	"fmt"
 
-	"github.com/netdata/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
 
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"

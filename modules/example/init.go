@@ -4,7 +4,7 @@ package example
 
 import (
 	"errors"
-	"github.com/netdata/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
 )
 
 func (e *Example) validateConfig() error {

@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/hdfs/README.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/hdfs/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/hdfs/README.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/hdfs/metadata.yaml"
 sidebar_label: "Hadoop Distributed File System (HDFS)"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/Storage, Mount Points and Filesystems"
@@ -11,19 +11,19 @@ endmeta-->
 # Hadoop Distributed File System (HDFS)
 
 
-<img src="https://netdata.cloud/img/hadoop.svg" width="150"/>
+<img src="https://khulnasoft.com/img/hadoop.svg" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: hfs
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
 This collector monitors HDFS nodes.
 
-Netdata accesses HDFS metrics over `Java Management Extensions` (JMX) through the web interface of an HDFS daemon.
+Khulnasoft accesses HDFS metrics over `Java Management Extensions` (JMX) through the web interface of an HDFS daemon.
 
 
 
@@ -100,11 +100,11 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ hdfs_capacity_usage ](https://github.com/netdata/netdata/blob/master/src/health/health.d/hdfs.conf) | hdfs.capacity | summary datanodes space capacity utilization |
-| [ hdfs_missing_blocks ](https://github.com/netdata/netdata/blob/master/src/health/health.d/hdfs.conf) | hdfs.blocks | number of missing blocks |
-| [ hdfs_stale_nodes ](https://github.com/netdata/netdata/blob/master/src/health/health.d/hdfs.conf) | hdfs.data_nodes | number of datanodes marked stale due to delayed heartbeat |
-| [ hdfs_dead_nodes ](https://github.com/netdata/netdata/blob/master/src/health/health.d/hdfs.conf) | hdfs.data_nodes | number of datanodes which are currently dead |
-| [ hdfs_num_failed_volumes ](https://github.com/netdata/netdata/blob/master/src/health/health.d/hdfs.conf) | hdfs.num_failed_volumes | number of failed volumes |
+| [ hdfs_capacity_usage ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/hdfs.conf) | hdfs.capacity | summary datanodes space capacity utilization |
+| [ hdfs_missing_blocks ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/hdfs.conf) | hdfs.blocks | number of missing blocks |
+| [ hdfs_stale_nodes ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/hdfs.conf) | hdfs.data_nodes | number of datanodes marked stale due to delayed heartbeat |
+| [ hdfs_dead_nodes ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/hdfs.conf) | hdfs.data_nodes | number of datanodes which are currently dead |
+| [ hdfs_num_failed_volumes ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/hdfs.conf) | hdfs.num_failed_volumes | number of failed volumes |
 
 
 ## Setup
@@ -121,10 +121,10 @@ The configuration file name for this integration is `go.d/hdfs.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/hdfs.conf
 ```
 #### Options
@@ -229,17 +229,17 @@ jobs:
 To troubleshoot issues with the `hfs` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

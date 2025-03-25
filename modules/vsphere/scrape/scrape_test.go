@@ -8,10 +8,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/netdata/go.d.plugin/modules/vsphere/client"
-	"github.com/netdata/go.d.plugin/modules/vsphere/discover"
-	rs "github.com/netdata/go.d.plugin/modules/vsphere/resources"
-	"github.com/netdata/go.d.plugin/pkg/tlscfg"
+	"github.com/khulnasoft/go.d.plugin/modules/vsphere/client"
+	"github.com/khulnasoft/go.d.plugin/modules/vsphere/discover"
+	rs "github.com/khulnasoft/go.d.plugin/modules/vsphere/resources"
+	"github.com/khulnasoft/go.d.plugin/pkg/tlscfg"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

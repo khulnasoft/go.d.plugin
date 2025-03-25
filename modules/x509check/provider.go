@@ -13,7 +13,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/netdata/go.d.plugin/pkg/tlscfg"
+	"github.com/khulnasoft/go.d.plugin/pkg/tlscfg"
 )
 
 type provider interface {

@@ -11,7 +11,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/netdata/go.d.plugin/pkg/web"
+	"github.com/khulnasoft/go.d.plugin/pkg/web"
 )
 
 const (

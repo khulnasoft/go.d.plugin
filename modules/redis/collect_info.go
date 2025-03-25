@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/netdata/go.d.plugin/agent/module"
+	"github.com/khulnasoft/go.d.plugin/agent/module"
 )
 
 const (
@@ -69,9 +69,9 @@ func (r *Redis) collectInfo(mx map[string]int64, info string) {
 		case field == "rdb_last_bgsave_status":
 			collectNumericValue(mx, field, convertBgSaveStatus(value))
 		case field == "rdb_current_bgsave_time_sec" && value == "-1":
-			// TODO: https://github.com/netdata/dashboard/issues/198
+			// TODO: https://github.com/khulnasoft/dashboard/issues/198
 			// "-1" means there is no on-going bgsave operation;
-			// netdata has 'Convert seconds to time' feature (enabled by default),
+			// khulnasoft has 'Convert seconds to time' feature (enabled by default),
 			// looks like it doesn't respect negative values and does abs().
 			// "-1" => "00:00:01".
 			collectNumericValue(mx, field, "0")

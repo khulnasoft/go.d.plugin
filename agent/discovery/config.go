@@ -5,9 +5,9 @@ package discovery
 import (
 	"errors"
 
-	"github.com/netdata/go.d.plugin/agent/confgroup"
-	"github.com/netdata/go.d.plugin/agent/discovery/dummy"
-	"github.com/netdata/go.d.plugin/agent/discovery/file"
+	"github.com/khulnasoft/go.d.plugin/agent/confgroup"
+	"github.com/khulnasoft/go.d.plugin/agent/discovery/dummy"
+	"github.com/khulnasoft/go.d.plugin/agent/discovery/file"
 )
 
 type Config struct {

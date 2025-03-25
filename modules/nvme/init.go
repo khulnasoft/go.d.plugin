@@ -35,7 +35,7 @@ func (n *NVMe) initNVMeCLIExec() (nvmeCLI, error) {
 		}
 	}
 
-	// TODO: remove after next minor release of Netdata (latest is v1.44.0)
+	// TODO: remove after next minor release of Khulnasoft (latest is v1.44.0)
 	// can't remove now because it will break "from source + stable channel" installations
 	nvmePath, err := exec.LookPath(n.BinaryPath)
 	if err != nil {

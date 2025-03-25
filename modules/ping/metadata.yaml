@@ -27,10 +27,10 @@ modules:
           
           - privileged (send raw ICMP ping, default). Requires
             CAP_NET_RAW [capability](https://man7.org/linux/man-pages/man7/capabilities.7.html) or root privileges:
-            > **Note**: set automatically during Netdata installation.
+            > **Note**: set automatically during Khulnasoft installation.
           
             ```bash
-            sudo setcap CAP_NET_RAW=eip <INSTALL_PREFIX>/usr/libexec/netdata/plugins.d/go.d.plugin
+            sudo setcap CAP_NET_RAW=eip <INSTALL_PREFIX>/usr/libexec/khulnasoft/plugins.d/go.d.plugin
             ```
           
           - unprivileged (send UDP ping, Linux only).
@@ -142,15 +142,15 @@ modules:
       - name: ping_host_reachable
         metric: ping.host_packet_loss
         info: "network host ${lab1el:host} reachability status"
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/ping.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/ping.conf
       - name: ping_packet_loss
         metric: ping.host_packet_loss
         info: "packet loss percentage to the network host ${label:host} over the last 10 minutes"
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/ping.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/ping.conf
       - name: ping_host_latency
         metric: ping.host_rtt
         info: "average latency to the network host ${label:host} over the last 10 seconds"
-        link: https://github.com/netdata/netdata/blob/master/src/health/health.d/ping.conf
+        link: https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/ping.conf
     metrics:
       folding:
         title: Metrics

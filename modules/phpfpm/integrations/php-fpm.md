@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/phpfpm/README.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/phpfpm/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/phpfpm/README.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/phpfpm/metadata.yaml"
 sidebar_label: "PHP-FPM"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/Web Servers and Web Proxies"
@@ -11,13 +11,13 @@ endmeta-->
 # PHP-FPM
 
 
-<img src="https://netdata.cloud/img/php.svg" width="150"/>
+<img src="https://khulnasoft.com/img/php.svg" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: phpfpm
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
@@ -96,10 +96,10 @@ The configuration file name for this integration is `go.d/phpfpm.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/phpfpm.conf
 ```
 #### Options
@@ -207,17 +207,17 @@ jobs:
 To troubleshoot issues with the `phpfpm` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

@@ -10,7 +10,7 @@ import (
 	"path/filepath"
 	"sort"
 
-	"github.com/netdata/go.d.plugin/logger"
+	"github.com/khulnasoft/go.d.plugin/logger"
 )
 
 const (

@@ -1,6 +1,6 @@
 <!--startmeta
-custom_edit_url: "https://github.com/netdata/go.d.plugin/edit/master/modules/elasticsearch/integrations/elasticsearch.md"
-meta_yaml: "https://github.com/netdata/go.d.plugin/edit/master/modules/elasticsearch/metadata.yaml"
+custom_edit_url: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/elasticsearch/integrations/elasticsearch.md"
+meta_yaml: "https://github.com/khulnasoft/go.d.plugin/edit/master/modules/elasticsearch/metadata.yaml"
 sidebar_label: "Elasticsearch"
 learn_status: "Published"
 learn_rel_path: "Collecting Metrics/Search Engines"
@@ -11,13 +11,13 @@ endmeta-->
 # Elasticsearch
 
 
-<img src="https://netdata.cloud/img/elasticsearch.svg" width="150"/>
+<img src="https://khulnasoft.com/img/elasticsearch.svg" width="150"/>
 
 
 Plugin: go.d.plugin
 Module: elasticsearch
 
-<img src="https://img.shields.io/badge/maintained%20by-Netdata-%2300ab44" />
+<img src="https://img.shields.io/badge/maintained%20by-Khulnasoft-%2300ab44" />
 
 ## Overview
 
@@ -173,11 +173,11 @@ The following alerts are available:
 
 | Alert name  | On metric | Description |
 |:------------|:----------|:------------|
-| [ elasticsearch_node_indices_search_time_query ](https://github.com/netdata/netdata/blob/master/src/health/health.d/elasticsearch.conf) | elasticsearch.node_indices_search_time | search performance is degraded, queries run slowly. |
-| [ elasticsearch_node_indices_search_time_fetch ](https://github.com/netdata/netdata/blob/master/src/health/health.d/elasticsearch.conf) | elasticsearch.node_indices_search_time | search performance is degraded, fetches run slowly. |
-| [ elasticsearch_cluster_health_status_red ](https://github.com/netdata/netdata/blob/master/src/health/health.d/elasticsearch.conf) | elasticsearch.cluster_health_status | cluster health status is red. |
-| [ elasticsearch_cluster_health_status_yellow ](https://github.com/netdata/netdata/blob/master/src/health/health.d/elasticsearch.conf) | elasticsearch.cluster_health_status | cluster health status is yellow. |
-| [ elasticsearch_node_index_health_red ](https://github.com/netdata/netdata/blob/master/src/health/health.d/elasticsearch.conf) | elasticsearch.node_index_health | node index $label:index health status is red. |
+| [ elasticsearch_node_indices_search_time_query ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/elasticsearch.conf) | elasticsearch.node_indices_search_time | search performance is degraded, queries run slowly. |
+| [ elasticsearch_node_indices_search_time_fetch ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/elasticsearch.conf) | elasticsearch.node_indices_search_time | search performance is degraded, fetches run slowly. |
+| [ elasticsearch_cluster_health_status_red ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/elasticsearch.conf) | elasticsearch.cluster_health_status | cluster health status is red. |
+| [ elasticsearch_cluster_health_status_yellow ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/elasticsearch.conf) | elasticsearch.cluster_health_status | cluster health status is yellow. |
+| [ elasticsearch_node_index_health_red ](https://github.com/khulnasoft/khulnasoft/blob/master/src/health/health.d/elasticsearch.conf) | elasticsearch.node_index_health | node index $label:index health status is red. |
 
 
 ## Setup
@@ -194,10 +194,10 @@ The configuration file name for this integration is `go.d/elasticsearch.conf`.
 
 
 You can edit the configuration file using the `edit-config` script from the
-Netdata [config directory](https://github.com/netdata/netdata/blob/master/docs/netdata-agent/configuration.md#the-netdata-config-directory).
+Khulnasoft [config directory](https://github.com/khulnasoft/khulnasoft/blob/master/docs/khulnasoft-agent/configuration.md#the-khulnasoft-config-directory).
 
 ```bash
-cd /etc/netdata 2>/dev/null || cd /opt/netdata/etc/netdata
+cd /etc/khulnasoft 2>/dev/null || cd /opt/khulnasoft/etc/khulnasoft
 sudo ./edit-config go.d/elasticsearch.conf
 ```
 #### Options
@@ -321,17 +321,17 @@ jobs:
 To troubleshoot issues with the `elasticsearch` collector, run the `go.d.plugin` with the debug option enabled. The output
 should give you clues as to why the collector isn't working.
 
-- Navigate to the `plugins.d` directory, usually at `/usr/libexec/netdata/plugins.d/`. If that's not the case on
-  your system, open `netdata.conf` and look for the `plugins` setting under `[directories]`.
+- Navigate to the `plugins.d` directory, usually at `/usr/libexec/khulnasoft/plugins.d/`. If that's not the case on
+  your system, open `khulnasoft.conf` and look for the `plugins` setting under `[directories]`.
 
   ```bash
-  cd /usr/libexec/netdata/plugins.d/
+  cd /usr/libexec/khulnasoft/plugins.d/
   ```
 
-- Switch to the `netdata` user.
+- Switch to the `khulnasoft` user.
 
   ```bash
-  sudo -u netdata -s
+  sudo -u khulnasoft -s
   ```
 
 - Run the `go.d.plugin` to debug the collector:

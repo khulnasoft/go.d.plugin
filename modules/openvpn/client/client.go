@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/netdata/go.d.plugin/pkg/socket"
+	"github.com/khulnasoft/go.d.plugin/pkg/socket"
 )
 
 var (

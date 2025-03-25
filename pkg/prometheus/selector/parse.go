@@ -7,7 +7,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/netdata/go.d.plugin/pkg/matcher"
+	"github.com/khulnasoft/go.d.plugin/pkg/matcher"
 )
 
 var (
